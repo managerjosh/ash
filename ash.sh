@@ -21,6 +21,7 @@
 # 16. Download Artillery, Configure, Install, Start
 # 17. Removes wget, make, flux
 # 18. Clean unneeded packages
+# 19. Remount all mounts to read-only
 
 \unalias -a
 \export $PATH=/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin:/usr/local/sbin

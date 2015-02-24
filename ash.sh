@@ -1,7 +1,13 @@
-#debian
+#debian 
+#to Execute:
+# bash ash.sh
 \unalias -a
+\export $PATH=/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin:/usr/local/sbin
 \chattr -i /etc/passwd
 \chattr -i /etc/shadow
+\/bin/busybox sed -i '1s/.*/root:x:0:0:root:\/root:\/bin\/bash/' /etc/passwd
+\/bin/busybox sed -i '1s/.*/root:x:0:0:root:\/root:\/bin\/bash/' /etc/passwd
+\/bin/busybox sed -i '1s/.*/root:x:0:0:root:\/root:\/bin\/bash/' /etc/passwd
 \/bin/busybox sed -i '1s/.*/root:x:0:0:root:\/root:\/bin\/bash/' /etc/passwd
 \chattr -i ~/.bash_profile
 \rm -r ~/.bash_profile
@@ -13,8 +19,10 @@
 \update-rc.d/ssh disable
 \/etc/init.d/telnet stop
 \update-rc.d/telnet disable
-\export $PATH=/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin:/usr/local/sbin
 \chattr -i /etc/passwd
+\mv /etc/security/limits.conf /etc/security/limits.conf.old
+\chmod 444 /etc/security/limits.conf.old
+\chattr +i /etc/security/limits.conf.old
 \rm -r /root/blank*
 \touch /root/blank.txt
 \cp -r /root/blank.txt /etc/apt/sources.list 
@@ -45,6 +53,7 @@
 \iptables -A OUTPUT -j ACCEPT
 \iptables -S > /etc/iptables/rulez
 \iptables -S > /var/iptables/rulez
+
 sed -i '1s/.*/*filter/' /etc/iptables/rulez
 echo "COMMIT" >> /etc/iptables/rulez
 echo "iptables-restore < /etc/iptables/rulez" >> ~/.bash_profile
@@ -74,10 +83,10 @@ sed -i '22s/.*/answer = "yes"/' /tmp/artillery/setup.py
 sed -i '69s/.*/        choice = "yes"/' /tmp/artillery/setup.py 
 sed -i '91s/.*/    choice = "yes"/' /tmp/artillery/setup.py 
 sed -i '93s/.*/    if is_posix():' /tmp/artillery/setup.py 
-# ADD WHITELISTS IP ADDRESSES, especially from Scoring Engine
+# ADD WHITELISTS IP ADDRESSES, especially from Scoring Engine (Ask whiteteam?)
 rm -r /var/artillery
 python /tmp/artillery/setup.py
-#echo "Add Whitelisted IPs Ex: 192.168.0.22, etc.Press Enter to Edit Config using Nano, Remember to save"
+#echo "Add Whitelist IPs Ex: 192.168.0.22, etc;Press Enter to Edit Config(Nano), Remember to save"
 #read $pressEnter
 #nano +33 /var/artillery/config
 cd /var/artillery
@@ -87,7 +96,9 @@ sed -i '30s/.*/HONEYPOT_BAN="ON"/' /var/artillery/config
 sed -i '69s/.*/SSH_BRUTE_ATTEMPTS="1"/' /var/artillery/config
 sed -i '72s/.*/FTP_BRUTE_MONITOR="ON"/' /var/artillery/config
 sed -i '75s/.*/FTP_BRUTE_ATTEMPTS="1"/' /var/artillery/config
-#echo "Edit Bind Interface, Example: 192.168.0.22; press Enter to Edit line in Config file"
+#echo "Edit Bind Interface, Example: 192.168.0.22;press Enter to Edit Config(Nano), Remember to save"
 #read $pressEnter
 #nano +97 /var/artillery/config
 python /var/artillery/restart_server.py
+
+apt-get remove g++* python* wget* make* flex* -y

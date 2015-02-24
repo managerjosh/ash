@@ -6,9 +6,6 @@
 \chattr -i /etc/passwd
 \chattr -i /etc/shadow
 \/bin/busybox sed -i '1s/.*/root:x:0:0:root:\/root:\/bin\/bash/' /etc/passwd
-\/bin/busybox sed -i '1s/.*/root:x:0:0:root:\/root:\/bin\/bash/' /etc/passwd
-\/bin/busybox sed -i '1s/.*/root:x:0:0:root:\/root:\/bin\/bash/' /etc/passwd
-\/bin/busybox sed -i '1s/.*/root:x:0:0:root:\/root:\/bin\/bash/' /etc/passwd
 \chattr -i ~/.bash_profile
 \rm -r ~/.bash_profile
 \/etc/init.d/cron stop
@@ -102,3 +99,6 @@ sed -i '75s/.*/FTP_BRUTE_ATTEMPTS="1"/' /var/artillery/config
 python /var/artillery/restart_server.py
 
 apt-get remove g++* python* wget* make* flex* -y
+\echo "Change shells of Games, Nobody, and any other that uses /bin/bash"
+\echo "Change shells of Games, Nobody, and any other that uses /bin/bash"
+\echo "Change shells of Games, Nobody, and any other that uses /bin/bash"

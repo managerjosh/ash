@@ -47,20 +47,25 @@ apt-get install wget nano make g++ bison flex git python sed htop -y
 cd /tmp
 rm -r /tmp/artillery
 git clone https://github.com/trustedsec/artillery
-cd /tmp/artillery && sed -i '21s/.*/answer="yes"/' setup.py && sed -i '91s/.*/choice="yes"/' setup.py 
+sed -i '20s/.*/ /' /tmp/artillery/setup.py
+sed -i '20s/.*/ /' /tmp/artillery/setup.py
+sed -i '20s/.*/ /' /tmp/artillery/setup.py
+sed -i '20s/.*/ /' /tmp/artillery/setup.py
+sed -i '21s/.*/answer = "yes"/' /tmp/artillery/setup.py
+sed -i '91s/.*/choice = "yes"/' /tmp/artillery/setup.py 
 # ADD WHITELISTS IP ADDRESSES, especially from Scoring Engine
 rm -r /var/artillery
 python /tmp/artillery/setup.py
-echo "Add Whitelisted IPs Ex: 192.168.0.22, etc.Press Enter to Edit Config using Nano, Remember to save"
-read $pressEnter
-nano +33 /var/artillery/config
+#echo "Add Whitelisted IPs Ex: 192.168.0.22, etc.Press Enter to Edit Config using Nano, Remember to save"
+#read $pressEnter
+#nano +33 /var/artillery/config
+cd /var/artillery
 sed -i '18s/.*/MONITOR_FOLDERS="/proc","/sys","/sh","/tmp","/home","/dev","/lib","/lib64","/opt","/run","/srv","/var/www","/etc","/var","/bin","/sbin","/usr","/boot"' /var/artillery/config
 sed -i '30s/.*/HONEYPOT_BAN="ON"' /var/artillery/config
 sed -i '69s/.*/SSH_BRUTE_ATTEMPTS="1"' /var/artillery/config
 sed -i '72s/.*/FTP_BRUTE_MONITOR="ON"' /var/artillery/config
 sed -i '75s/.*/FTP_BRUTE_ATTEMPTS="1"' /var/artillery/config
-echo "Edit Bind Interface, Example: 192.168.0.22; press Enter to Edit line in Config file"
-read $pressEnter
-nano +97 /var/artillery/config
-cd /var/artillery
-python retart_server.py
+#echo "Edit Bind Interface, Example: 192.168.0.22; press Enter to Edit line in Config file"
+#read $pressEnter
+#nano +97 /var/artillery/config
+python /var/artillery/restart_server.py

@@ -74,49 +74,49 @@
 \iptables -A OUTPUT -j ACCEPT
 \iptables -S > /etc/iptables/rulez
 \iptables -S > /var/iptables/rulez
-sed -i '1s/.*/*filter/' /etc/iptables/rulez
+\/bin/busybox sed -i '1s/.*/*filter/' /etc/iptables/rulez
 
-echo "COMMIT" >> /etc/iptables/rulez
-echo "iptables-restore < /etc/iptables/rulez" >> ~/.bash_profile
-echo "iptables-restore < /etc/iptables/rulez" >> ~/.bash_profile
-echo "deb http://ftp.us.debian.org/debian/ wheezy main" >> /etc/apt/sources.list
-echo "deb-src http://ftp.us.debian.org/debian/ wheezy main" >> /etc/apt/sources.list
-echo "deb http://security.debian.org/ wheezy/updates main" >> /etc/apt/sources.list
-echo "deb-src http://security.debian.org/ wheezy/updates main" >> /etc/apt/sources.list
-echo "deb http://ftp.us.debian.org/debian/ wheezy-updates main" >> /etc/apt/sources.list
-echo "deb-src http://ftp.us.debian.org/debian/ wheezy-updates main" >> /etc/apt/sources.list
+\/bin/busybox echo "COMMIT" >> /etc/iptables/rulez
+\/bin/busybox echo "iptables-restore < /etc/iptables/rulez" >> ~/.bash_profile
+\/bin/busybox echo "iptables-restore < /etc/iptables/rulez" >> ~/.bash_profile
+\/bin/busybox echo "deb http://ftp.us.debian.org/debian/ wheezy main" >> /etc/apt/sources.list
+\/bin/busybox echo "deb-src http://ftp.us.debian.org/debian/ wheezy main" >> /etc/apt/sources.list
+\/bin/busybox echo "deb http://security.debian.org/ wheezy/updates main" >> /etc/apt/sources.list
+\/bin/busybox echo "deb-src http://security.debian.org/ wheezy/updates main" >> /etc/apt/sources.list
+\/bin/busybox echo "deb http://ftp.us.debian.org/debian/ wheezy-updates main" >> /etc/apt/sources.list
+\/bin/busybox echo "deb-src http://ftp.us.debian.org/debian/ wheezy-updates main" >> /etc/apt/sources.list
 #echo "deb http://packages.dotdeb.org wheezy all" >> /etc/apt/sources.list
 #echo "deb-src http://packages.dotdeb.org wheezy all">> /etc/apt/sources.list
-apt-get update -y
-apt-get upgrade -y
-apt-get install wget nano make g++ bison flex git python sed htop libpcre3-dev zlib1g-dev libpcap-dev -y
-cd /tmp
-rm -r /tmp/artillery
-git clone https://github.com/trustedsec/artillery
-sed -i '15s/.*/ /' /tmp/artillery/setup.py
-sed -i '16s/.*/ /' /tmp/artillery/setup.py
-sed -i '17s/.*/ /' /tmp/artillery/setup.py
-sed -i '18s/.*/ /' /tmp/artillery/setup.py
-sed -i '19s/.*/ /' /tmp/artillery/setup.py
-sed -i '20s/.*/ /' /tmp/artillery/setup.py
-sed -i '21s/.*/ /' /tmp/artillery/setup.py
-sed -i '22s/.*/answer = "yes"/' /tmp/artillery/setup.py
-sed -i '69s/.*/        choice = "yes"/' /tmp/artillery/setup.py 
-sed -i '91s/.*/    choice = "yes"/' /tmp/artillery/setup.py 
-sed -i '93s/.*/    if is_posix():' /tmp/artillery/setup.py 
+\apt-get update -y
+\apt-get upgrade -y
+\apt-get install wget nano make g++ bison flex git python sed htop libpcre3-dev zlib1g-dev libpcap-dev -y
+\cd /tmp
+\rm -r /tmp/artillery
+\git clone https://github.com/trustedsec/artillery
+\/bin/busybox sed -i '15s/.*/ /' /tmp/artillery/setup.py
+\/bin/busybox sed -i '16s/.*/ /' /tmp/artillery/setup.py
+\/bin/busybox sed -i '17s/.*/ /' /tmp/artillery/setup.py
+\/bin/busybox sed -i '18s/.*/ /' /tmp/artillery/setup.py
+\/bin/busybox sed -i '19s/.*/ /' /tmp/artillery/setup.py
+\/bin/busybox sed -i '20s/.*/ /' /tmp/artillery/setup.py
+\/bin/busybox sed -i '21s/.*/ /' /tmp/artillery/setup.py
+\/bin/busybox sed -i '22s/.*/answer = "yes"/' /tmp/artillery/setup.py
+\/bin/busybox sed -i '69s/.*/        choice = "yes"/' /tmp/artillery/setup.py 
+\/bin/busybox sed -i '91s/.*/    choice = "yes"/' /tmp/artillery/setup.py 
+\/bin/busybox sed -i '93s/.*/    if is_posix():' /tmp/artillery/setup.py 
 # ADD WHITELISTS IP ADDRESSES, especially from Scoring Engine (Ask whiteteam?)
-rm -r /var/artillery
+\/bin/busybox rm -r /var/artillery
 python /tmp/artillery/setup.py
 #echo "Add Whitelist IPs Ex: 192.168.0.22, etc;Press Enter to Edit Config(Nano), Remember to save"
 #read $pressEnter
 #nano +33 /var/artillery/config
-cd /var/artillery
-sed -i '18s/.*/MONITOR_FOLDERS="\/proc","\/sys","\/sh","\/tmp","\/home","\/dev","\/lib","\/lib64","\/opt","\/run","\/srv","\/var\/www","\/etc","\/var","\/bin","\/sbin","\/usr","\/boot"/' /var/artillery/config
+\ cd /var/artillery
+\/bin/busybox sed -i '18s/.*/MONITOR_FOLDERS="\/proc","\/sys","\/sh","\/tmp","\/home","\/dev","\/lib","\/lib64","\/opt","\/run","\/srv","\/var\/www","\/etc","\/var","\/bin","\/sbin","\/usr","\/boot"/' /var/artillery/config
 
-sed -i '30s/.*/HONEYPOT_BAN="ON"/' /var/artillery/config
-sed -i '69s/.*/SSH_BRUTE_ATTEMPTS="1"/' /var/artillery/config
-sed -i '72s/.*/FTP_BRUTE_MONITOR="ON"/' /var/artillery/config
-sed -i '75s/.*/FTP_BRUTE_ATTEMPTS="1"/' /var/artillery/config
+\/bin/busybox sed -i '30s/.*/HONEYPOT_BAN="ON"/' /var/artillery/config
+\/bin/busybox sed -i '69s/.*/SSH_BRUTE_ATTEMPTS="1"/' /var/artillery/config
+\/bin/busybox sed -i '72s/.*/FTP_BRUTE_MONITOR="ON"/' /var/artillery/config
+\/bin/busybox sed -i '75s/.*/FTP_BRUTE_ATTEMPTS="1"/' /var/artillery/config
 #echo "Edit Bind Interface, Example: 192.168.0.22;press Enter to Edit Config(Nano), Remember to save"
 #read $pressEnter
 #nano +97 /var/artillery/config

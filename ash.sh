@@ -1,5 +1,5 @@
 #debian
-touch blank.txt
+touch /root/blank.txt
 cp -r blank.txt > /etc/apt/sources.list 
 cp -r blank.txt > ~/.bash_profile
 mkdir /etc/iptables
@@ -42,7 +42,8 @@ echo "deb http://packages.dotdeb.org wheezy all" >> /etc/apt/sources.list
 echo "deb-src http://packages.dotdeb.org wheezy all">> /etc/apt/sources.list
 apt-get update -y
 apt-get upgrade -y
-apt-get install wget nano make g++ bison flex libpcre3-dev zlib1g-dev libpcap-dev git python sed htop -y
+apt-get install wget nano make g++ bison flex git python sed htop -y
+# libpcre3-dev zlib1g-dev libpcap-dev
 cd /tmp
 git clone https://github.com/trustedsec/artillery
 cd artillery && sed -i '21s/.*/answer = "yes"/' setup.py && sed -i '91s/.*/choice = "yes"/' setup.py 

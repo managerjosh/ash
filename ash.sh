@@ -131,4 +131,4 @@ python /tmp/artillery/setup.py
 \apt-get autoremove
 \chattr +i /etc/passwd
 \chattr +i /etc/shadow
-\/etc/security/limits.conf
+\chattr +i /etc/security/limits.conf

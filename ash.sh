@@ -1,4 +1,5 @@
 # Debian Secure Script by c2_
+# Environment: no Systemd, tested Debian 7.7
 # Execute:
 # \bash ash.sh
 # What it does:
@@ -40,7 +41,7 @@
 \update-rc.d/telnet disable
 \/etc/init.d/samba stop
 \update-rc.d/samba disable
-\mv /etc/security/limits.conf /etc/security/limits.conf.old
+\cp /etc/security/limits.conf /etc/security/limits.conf.old
 \chmod 444 /etc/security/limits.conf.old
 \chattr +i /etc/security/limits.conf.old
 \rm -r /root/blank*
@@ -50,6 +51,7 @@
 \cp -r /root/blank.txt /etc/security/limits.conf
 \/bin/busybox echo "* hard maxsyslogins 1">> /etc/security/limits.conf
 \/bin/busybox echo "* soft maxlogins 1">> /etc/security/limits.conf
+\chattr +i /etc/security/limits.conf
 \mkdir /etc/iptables
 \mkdir /var/iptables
 \iptables --flush
@@ -77,8 +79,7 @@
 \iptables -S > /var/iptables/rulez
 \/bin/busybox sed -i '1s/.*/*filter/' /etc/iptables/rulez
 \/bin/busybox echo "COMMIT" >> /etc/iptables/rulez
-\/bin/busybox echo "iptables-restore < /etc/iptables/rulez" >> ~/.bash_profile
-\/bin/busybox echo "iptables-restore < /etc/iptables/rulez" >> ~/.bash_profile
+\iptables-save
 \/bin/busybox echo "deb http://ftp.us.debian.org/debian/ wheezy main" >> /etc/apt/sources.list
 \/bin/busybox echo "deb-src http://ftp.us.debian.org/debian/ wheezy main" >> /etc/apt/sources.list
 \/bin/busybox echo "deb http://security.debian.org/ wheezy/updates main" >> /etc/apt/sources.list
@@ -104,7 +105,6 @@
 \/bin/busybox sed -i '69s/.*/        choice = "yes"/' /tmp/artillery/setup.py 
 \/bin/busybox sed -i '91s/.*/    choice = "yes"/' /tmp/artillery/setup.py 
 \/bin/busybox sed -i '93s/.*/    if is_posix():' /tmp/artillery/setup.py 
-# ADD WHITELISTS IP ADDRESSES, especially from Scoring Engine (Ask whiteteam?)
 \/bin/busybox rm -r /var/artillery
 python /tmp/artillery/setup.py
 #echo "Add Whitelist IPs Ex: 192.168.0.22, etc;Press Enter to Edit Config(Nano), Remember to save"
@@ -121,14 +121,14 @@ python /tmp/artillery/setup.py
 #nano +97 /var/artillery/config
 \python /var/artillery/restart_server.py
 \apt-get remove wget* make* flex* -y
-\echo "Change shells of Games, Nobody, and any other that uses /bin/bash to /bin/false"
-\echo "Change shells of Games, Nobody, and any other that uses /bin/bash to /bin/false"
-\echo "Change shells of Games, Nobody, and any other that uses /bin/bash to /bin/false"
-\echo "Change shells of Games, Nobody, and any other that uses /bin/bash to /bin/false"
-\echo "Change shells of Games, Nobody, and any other that uses /bin/bash to /bin/false"
+\echo "TODO: Artillery is installed & activated, Adjust Whitelist in: /var/artillery/config then restart_server.py"
+\echo "TODO: Change shells of Games, Nobody, and any other that uses /bin/bash to /bin/false"
+\echo "TODO: Tweak Firewall rules, save rules"
+\echo "TODO: Check ~/.mysql_history"
+\echo "TODO: Check History"
 \apt-get clean
 \apt-get autoclean
 \apt-get autoremove
 \chattr +i /etc/passwd
 \chattr +i /etc/shadow
-\chattr +i /etc/security/limits.conf
+

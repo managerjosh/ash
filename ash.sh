@@ -1,5 +1,5 @@
 # Debian Secure Script by c2_
-# Environment: no Systemd, tested Debian 7.7
+# Environment: no Systemd, tested Debian 7.7, need busybox, sed, python
 # Execute:
 # \bash ash.sh
 # What it does:
@@ -120,7 +120,7 @@ python /tmp/artillery/setup.py
 #read $pressEnter
 #nano +97 /var/artillery/config
 \python /var/artillery/restart_server.py
-\apt-get remove wget* make* flex* -y
+\apt-get remove netcat* ssh* telnet* -y
 \echo "TODO: Artillery is installed & activated, Adjust Whitelist in: /var/artillery/config then restart_server.py"
 \echo "TODO: Change shells of Games, Nobody, and any other that uses /bin/bash to /bin/false"
 \echo "TODO: Tweak Firewall rules, save rules"

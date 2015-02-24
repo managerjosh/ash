@@ -47,10 +47,8 @@
 \touch /root/blank.txt
 \cp -r /root/blank.txt /etc/apt/sources.list 
 \cp -r /root/blank.txt ~/.bash_profile
-
 \mkdir /etc/iptables
 \mkdir /var/iptables
-
 \iptables --flush
 \iptables -P INPUT ACCEPT
 \iptables -P FORWARD ACCEPT
@@ -75,7 +73,6 @@
 \iptables -S > /etc/iptables/rulez
 \iptables -S > /var/iptables/rulez
 \/bin/busybox sed -i '1s/.*/*filter/' /etc/iptables/rulez
-
 \/bin/busybox echo "COMMIT" >> /etc/iptables/rulez
 \/bin/busybox echo "iptables-restore < /etc/iptables/rulez" >> ~/.bash_profile
 \/bin/busybox echo "iptables-restore < /etc/iptables/rulez" >> ~/.bash_profile
@@ -112,7 +109,6 @@ python /tmp/artillery/setup.py
 #nano +33 /var/artillery/config
 \ cd /var/artillery
 \/bin/busybox sed -i '18s/.*/MONITOR_FOLDERS="\/proc","\/sys","\/sh","\/tmp","\/home","\/dev","\/lib","\/lib64","\/opt","\/run","\/srv","\/var\/www","\/etc","\/var","\/bin","\/sbin","\/usr","\/boot"/' /var/artillery/config
-
 \/bin/busybox sed -i '30s/.*/HONEYPOT_BAN="ON"/' /var/artillery/config
 \/bin/busybox sed -i '69s/.*/SSH_BRUTE_ATTEMPTS="1"/' /var/artillery/config
 \/bin/busybox sed -i '72s/.*/FTP_BRUTE_MONITOR="ON"/' /var/artillery/config
@@ -121,7 +117,6 @@ python /tmp/artillery/setup.py
 #read $pressEnter
 #nano +97 /var/artillery/config
 \python /var/artillery/restart_server.py
-
 \apt-get remove wget* make* flex* -y
 \echo "Change shells of Games, Nobody, and any other that uses /bin/bash to /bin/false"
 \echo "Change shells of Games, Nobody, and any other that uses /bin/bash to /bin/false"

@@ -99,6 +99,8 @@ sed -i '75s/.*/FTP_BRUTE_ATTEMPTS="1"/' /var/artillery/config
 python /var/artillery/restart_server.py
 
 apt-get remove g++* python* wget* make* flex* -y
-\echo "Change shells of Games, Nobody, and any other that uses /bin/bash"
-\echo "Change shells of Games, Nobody, and any other that uses /bin/bash"
-\echo "Change shells of Games, Nobody, and any other that uses /bin/bash"
+\echo "Change shells of Games, Nobody, and any other that uses /bin/bash to /bin/false"
+\echo "Change shells of Games, Nobody, and any other that uses /bin/bash to /bin/false"
+\echo "Change shells of Games, Nobody, and any other that uses /bin/bash to /bin/false"
+\echo "Change shells of Games, Nobody, and any other that uses /bin/bash to /bin/false"
+\echo "Change shells of Games, Nobody, and any other that uses /bin/bash to /bin/false"

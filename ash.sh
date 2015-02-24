@@ -17,7 +17,7 @@
 # 13. Adjusts repository
 # 14. Patches/Updates
 # 15. Install tools and compilers
-# 16. Download Artillery, Configure, install, start
+# 16. Download Artillery, Configure, Install, Start
 # 17. Removes wget, make, flux
 # 18. Clean unneeded packages
 

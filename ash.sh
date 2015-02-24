@@ -79,6 +79,7 @@ python /tmp/artillery/setup.py
 #nano +33 /var/artillery/config
 cd /var/artillery
 sed -i '18s/.*/MONITOR_FOLDERS="\/proc","\/sys","\/sh","\/tmp","\/home","\/dev","\/lib","\/lib64","\/opt","\/run","\/srv","\/var\/www","\/etc","\/var","\/bin","\/sbin","\/usr","\/boot"/' /var/artillery/config
+
 sed -i '30s/.*/HONEYPOT_BAN="ON"/' /var/artillery/config
 sed -i '69s/.*/SSH_BRUTE_ATTEMPTS="1"/' /var/artillery/config
 sed -i '72s/.*/FTP_BRUTE_MONITOR="ON"/' /var/artillery/config

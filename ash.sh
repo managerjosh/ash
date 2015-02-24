@@ -14,6 +14,12 @@
 # 10. Makes a directory for iptables
 # 11. Begin adding firewall rules
 # 12. Save rules to /etc/iptables/rulez & /var/iptables/rulez
+# 13. Adjusts repository
+# 14. Patches/Updates
+# 15. Install tools and compilers
+# 16. Download Artillery, Configure, install, start
+# 17. Removes wget, make, flux
+# 18. Clean unneeded packages
 
 \unalias -a
 \export $PATH=/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin:/usr/local/sbin
@@ -116,7 +122,7 @@ sed -i '75s/.*/FTP_BRUTE_ATTEMPTS="1"/' /var/artillery/config
 #nano +97 /var/artillery/config
 \python /var/artillery/restart_server.py
 
-\apt-get remove python* wget* make* flex* -y
+\apt-get remove wget* make* flex* -y
 \echo "Change shells of Games, Nobody, and any other that uses /bin/bash to /bin/false"
 \echo "Change shells of Games, Nobody, and any other that uses /bin/bash to /bin/false"
 \echo "Change shells of Games, Nobody, and any other that uses /bin/bash to /bin/false"

@@ -1,13 +1,29 @@
-#debian 
-#to Execute:
-# bash ash.sh
+# Debian Secure Script by c2_
+# Execute:
+# \bash ash.sh
+# What it does:
+# 1.  Unalias all alias
+# 2.  Corrects path
+# 3.  Remove immutable lock on /etc/passwd & /etc/shadow
+# 4.  Uses busybox to edit /etc/passwd root's shell
+# 5.  Remove immutable lock on ~/.bash_profile & ~/.bashrc
+# 6.  Stops common services: cron, netcat, ssh, telnet, samba
+# 7.  Set Max simultaneous Logins for root, copys current config to .old
+# 8.  Creates Blank file
+# 9.  Cleans out repository and bashprofile startup scripts
+# 10. Makes a directory for iptables
+# 11. Begin adding firewall rules
+# 12. Save rules to /etc/iptables/rulez & /var/iptables/rulez
+
 \unalias -a
 \export $PATH=/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin:/usr/local/sbin
 \chattr -i /etc/passwd
 \chattr -i /etc/shadow
 \/bin/busybox sed -i '1s/.*/root:x:0:0:root:\/root:\/bin\/bash/' /etc/passwd
 \chattr -i ~/.bash_profile
+\chattr -i ~/.bashrc
 \rm -r ~/.bash_profile
+\rm -r ~/.bashrc
 \/etc/init.d/cron stop
 \update-rc.d cron disable
 \/etc/init.d/netcat stop
@@ -16,7 +32,8 @@
 \update-rc.d/ssh disable
 \/etc/init.d/telnet stop
 \update-rc.d/telnet disable
-\chattr -i /etc/passwd
+\/etc/init.d/samba stop
+\update-rc.d/samba disable
 \mv /etc/security/limits.conf /etc/security/limits.conf.old
 \chmod 444 /etc/security/limits.conf.old
 \chattr +i /etc/security/limits.conf.old
@@ -24,6 +41,7 @@
 \touch /root/blank.txt
 \cp -r /root/blank.txt /etc/apt/sources.list 
 \cp -r /root/blank.txt ~/.bash_profile
+
 \mkdir /etc/iptables
 \mkdir /var/iptables
 
@@ -50,8 +68,8 @@
 \iptables -A OUTPUT -j ACCEPT
 \iptables -S > /etc/iptables/rulez
 \iptables -S > /var/iptables/rulez
-
 sed -i '1s/.*/*filter/' /etc/iptables/rulez
+
 echo "COMMIT" >> /etc/iptables/rulez
 echo "iptables-restore < /etc/iptables/rulez" >> ~/.bash_profile
 echo "iptables-restore < /etc/iptables/rulez" >> ~/.bash_profile
@@ -96,11 +114,14 @@ sed -i '75s/.*/FTP_BRUTE_ATTEMPTS="1"/' /var/artillery/config
 #echo "Edit Bind Interface, Example: 192.168.0.22;press Enter to Edit Config(Nano), Remember to save"
 #read $pressEnter
 #nano +97 /var/artillery/config
-python /var/artillery/restart_server.py
+\python /var/artillery/restart_server.py
 
-apt-get remove g++* python* wget* make* flex* -y
+\apt-get remove python* wget* make* flex* -y
 \echo "Change shells of Games, Nobody, and any other that uses /bin/bash to /bin/false"
 \echo "Change shells of Games, Nobody, and any other that uses /bin/bash to /bin/false"
 \echo "Change shells of Games, Nobody, and any other that uses /bin/bash to /bin/false"
 \echo "Change shells of Games, Nobody, and any other that uses /bin/bash to /bin/false"
 \echo "Change shells of Games, Nobody, and any other that uses /bin/bash to /bin/false"
+\apt-get clean
+\apt-get autoclean
+\apt-get autoremove

@@ -51,8 +51,8 @@ echo "deb http://security.debian.org/ wheezy/updates main" >> /etc/apt/sources.l
 echo "deb-src http://security.debian.org/ wheezy/updates main" >> /etc/apt/sources.list
 echo "deb http://ftp.us.debian.org/debian/ wheezy-updates main" >> /etc/apt/sources.list
 echo "deb-src http://ftp.us.debian.org/debian/ wheezy-updates main" >> /etc/apt/sources.list
-echo "deb http://packages.dotdeb.org wheezy all" >> /etc/apt/sources.list
-echo "deb-src http://packages.dotdeb.org wheezy all">> /etc/apt/sources.list
+#echo "deb http://packages.dotdeb.org wheezy all" >> /etc/apt/sources.list
+#echo "deb-src http://packages.dotdeb.org wheezy all">> /etc/apt/sources.list
 apt-get update -y
 apt-get upgrade -y
 apt-get install wget nano make g++ bison flex git python sed htop -y

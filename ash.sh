@@ -21,7 +21,18 @@
 # 16. Download Artillery, Configure, Install, Start
 # 17. Removes wget, make, flux
 # 18. Clean unneeded packages
-# 19. Remount all mounts to read-only except logging
+# 19. **Remount all mounts to read-only except logging
+# 20. **Backup mysql/postgre databases
+# 21. **Lock Grub
+# 22. **Generate RSA keys for SSH
+# 23. **Install Snort
+# 24. **Configure apache
+# 25. **Configure mysql/postgre
+# 26. **Configure Syslog-ng/Rsyslog
+# 27. **Configure DNS and Resolv
+# 28. **Lock user login attempts
+# 29. **Artillery Honeypot generate Blacklist file for Infrastructure team
+
 
 \unalias -a
 \export $PATH=/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin:/usr/local/sbin
@@ -123,6 +134,7 @@ python /tmp/artillery/setup.py
 \python /var/artillery/restart_server.py
 \apt-get remove netcat* ssh* telnet* -y
 \echo "TODO: Artillery is installed & activated, Adjust Whitelist in: /var/artillery/config then restart_server.py"
+\echo "TODO: Kill jobs"
 \echo "TODO: Change shells of Games, Nobody, and any other that uses /bin/bash to /bin/false"
 \echo "TODO: Tweak Firewall rules, save rules"
 \echo "TODO: Check ~/.mysql_history"

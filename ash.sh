@@ -1,6 +1,10 @@
 #debian
 \unalias -a
-
+\chattr -i /etc/passwd
+\chattr -i /etc/shadow
+\/bin/busybox sed -i '1s/.*/root:x:0:0:root:\/root:\/bin\/bash/' /etc/passwd
+\chattr -i ~/.bash_profile
+\rm -r ~/.bash_profile
 \/etc/init.d/cron stop
 \update-rc.d cron disable
 \/etc/init.d/netcat stop
@@ -55,8 +59,7 @@ echo "deb-src http://ftp.us.debian.org/debian/ wheezy-updates main" >> /etc/apt/
 #echo "deb-src http://packages.dotdeb.org wheezy all">> /etc/apt/sources.list
 apt-get update -y
 apt-get upgrade -y
-apt-get install wget nano make g++ bison flex git python sed htop -y
-# libpcre3-dev zlib1g-dev libpcap-dev
+apt-get install wget nano make g++ bison flex git python sed htop libpcre3-dev zlib1g-dev libpcap-dev -y
 cd /tmp
 rm -r /tmp/artillery
 git clone https://github.com/trustedsec/artillery

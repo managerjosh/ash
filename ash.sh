@@ -54,9 +54,9 @@ sed -i '18s/.*/ /' /tmp/artillery/setup.py
 sed -i '19s/.*/ /' /tmp/artillery/setup.py
 sed -i '20s/.*/ /' /tmp/artillery/setup.py
 sed -i '21s/.*/ /' /tmp/artillery/setup.py
-sed -i '22s/.*/answer = "yes"/' /tmp/artillery/setup.py
-sed -i '92s/.*/choice = "yes"/' /tmp/artillery/setup.py 
-sed -i '92s/.*/choice = "yes"/' /tmp/artillery/setup.py 
+sed -i '22s/.*/     answer = "yes"/' /tmp/artillery/setup.py
+sed -i '69s/.*/        choice = "yes"/' /tmp/artillery/setup.py 
+sed -i '92s/.*/    choice = "yes"/' /tmp/artillery/setup.py 
 # ADD WHITELISTS IP ADDRESSES, especially from Scoring Engine
 rm -r /var/artillery
 python /tmp/artillery/setup.py

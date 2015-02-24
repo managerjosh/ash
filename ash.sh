@@ -46,7 +46,7 @@ apt-get install wget nano make g++ bison flex git python sed htop -y
 # libpcre3-dev zlib1g-dev libpcap-dev
 cd /tmp
 git clone https://github.com/trustedsec/artillery
-cd /tmp/artillery && sed -i '21s/.*/answer = "yes"/' setup.py && sed -i '91s/.*/choice = "yes"/' setup.py 
+cd /tmp/artillery && sed -i '21s/.*/answer="yes"/' setup.py && sed -i '91s/.*/choice="yes"/' setup.py 
 # ADD WHITELISTS IP ADDRESSES, especially from Scoring Engine
 python /tmp/artillery/setup.py
 echo "Add Whitelisted IPs Ex: 192.168.0.22, etc.Press Enter to Edit Config using Nano, Remember to save"

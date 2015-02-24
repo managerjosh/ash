@@ -47,6 +47,9 @@
 \touch /root/blank.txt
 \cp -r /root/blank.txt /etc/apt/sources.list 
 \cp -r /root/blank.txt ~/.bash_profile
+\cp -r /root/blank.txt /etc/security/limits.conf
+\/bin/busybox echo "* hard maxsyslogins 1">> /etc/security/limits.conf
+\/bin/busybox echo "* soft maxlogins 1">> /etc/security/limits.conf
 \mkdir /etc/iptables
 \mkdir /var/iptables
 \iptables --flush
@@ -126,3 +129,6 @@ python /tmp/artillery/setup.py
 \apt-get clean
 \apt-get autoclean
 \apt-get autoremove
+\chattr +i /etc/passwd
+\chattr +i /etc/shadow
+\/etc/security/limits.conf

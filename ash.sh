@@ -42,11 +42,21 @@ echo "deb http://packages.dotdeb.org wheezy all" >> /etc/apt/sources.list
 echo "deb-src http://packages.dotdeb.org wheezy all">> /etc/apt/sources.list
 apt-get update -y
 apt-get upgrade -y
-apt-get install wget make g++ bison flex libpcre3-dev zlib1g-dev libpcap-dev git python sed -y
+apt-get install wget nano make g++ bison flex libpcre3-dev zlib1g-dev libpcap-dev git python sed htop -y
 cd /tmp
 git clone https://github.com/trustedsec/artillery
 cd artillery && sed -i '21s/.*/answer = "yes"/' setup.py && sed -i '91s/.*/choice = "yes"/' setup.py 
 # ADD WHITELISTS IP ADDRESSES, especially from Scoring Engine
-#sed -i '33s/.*/WHITELIST_IP="127.0.0.1,localhost"
+echo "Add Whitelisted IPs Ex: 192.168.0.22, etc.Press Enter to Edit Config using Nano, Remember to save"
+read $pressEnter
+nano +33 /var/artillery/config
+sed -i '18s/.*/MONITOR_FOLDERS="/proc","/sys","/sh","/tmp","/home","/dev","/lib","/lib64","/opt","/run","/srv","/var/www","/etc","/var","/bin","/sbin","/usr","/boot"' /var/artillery/config
+sed -i '30s/.*/HONEYPOT_BAN="ON"' /var/artillery/config
+sed -i '69s/.*/SSH_BRUTE_ATTEMPTS="1"' /var/artillery/config
+sed -i '72s/.*/FTP_BRUTE_MONITOR="ON"' /var/artillery/config
+sed -i '75s/.*/FTP_BRUTE_ATTEMPTS="1"' /var/artillery/config
+echo "Edit Bind Interface, Example: 192.168.0.22; press Enter to Edit line in Config file"
+read $pressEnter
+nano +97 /var/artillery/config
 cd /var/artillery
 python retart_server.py

@@ -1,5 +1,5 @@
 # Debian Secure Script by c2_
-# Environment: no Systemd, tested Debian 7.7, need busybox, sed, python
+# Environment: Assume network interface configured, no Systemd, tested Debian 7.7, need assume busybox, sed, python
 # Execute:
 # \bash ash.sh
 # What it does:

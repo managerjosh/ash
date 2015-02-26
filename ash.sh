@@ -43,6 +43,9 @@
 \chattr -i ~/.bashrc
 \rm -r ~/.bash_profile
 \rm -r ~/.bashrc
+\touch ~/.bashrc
+\source ~/.bashrc
+\unalias passwd
 \/etc/init.d/cron stop
 \update-rc.d cron disable
 \/etc/init.d/netcat stop
@@ -139,6 +142,7 @@ python /tmp/artillery/setup.py
 \echo "TODO: Tweak Firewall rules, save rules"
 \echo "TODO: Check ~/.mysql_history"
 \echo "TODO: Check History"
+\echo "TODO: CHANGE PASSWORDS"
 \echo "---!!!---REMEMBER THAT /etc/passwd & /etc/shadow ARE IMMUTABLE---!!!!---"
 \echo "---!!!---REMEMBER THAT /etc/passwd & /etc/shadow ARE IMMUTABLE---!!!!---"
 \echo "---!!!---REMEMBER THAT /etc/passwd & /etc/shadow ARE IMMUTABLE---!!!!---"

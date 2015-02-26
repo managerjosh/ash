@@ -139,7 +139,9 @@ python /tmp/artillery/setup.py
 \echo "TODO: Tweak Firewall rules, save rules"
 \echo "TODO: Check ~/.mysql_history"
 \echo "TODO: Check History"
-\echo "REMEMBER THAT /etc/passwd & /etc/shadow is immutable"
+\echo "---!!!---REMEMBER THAT /etc/passwd & /etc/shadow ARE IMMUTABLE---!!!!---"
+\echo "---!!!---REMEMBER THAT /etc/passwd & /etc/shadow ARE IMMUTABLE---!!!!---"
+\echo "---!!!---REMEMBER THAT /etc/passwd & /etc/shadow ARE IMMUTABLE---!!!!---"
 \apt-get clean
 \apt-get autoclean
 \apt-get autoremove

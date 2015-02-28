@@ -9,7 +9,7 @@ lock other shells
 # 23. **Install Snort
 # 24. **Configure apache
 # 25. **Configure mysql/postgre
-# 26. **Configure Syslog-ng/Rsyslog
+# 26. **Configure Syslog-ng/Rsyslog for log stash
 # 27. **Configure DNS and Resolv
 # 28. **Lock user login attempts
 # 29. **Artillery Honeypot generate Blacklist file for Infrastructure team

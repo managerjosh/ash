@@ -4,7 +4,7 @@ wget http://www.tcpdump.org/release/libpcap-1.6.2.tar.gz  http://libdnet.googlec
 tar -xzf libpcap-1.6.2.tar.gz && cd /usr/src/libpcap-1.6.2
 ./configure --prefix=/usr && make && make install 
 tar -xzf /usr/src/libdnet-1.12.tgz z && cd /usr/src/libdnet-1.12
-./configure --prefix=/usr --enable-shared --with-dnet-* && make && make install
+./configure --prefix=/usr --enable-shared && make && make install
 tar -xzf /usr/src/daq-2.0.4.tar.gz && cd /usr/src/daq-2.0.4
 ./configure && make && make install
 tar -xzf /usr/src/snort-2.9.7.0.tar.gz && cd /usr/src/snort-2.9.7.0

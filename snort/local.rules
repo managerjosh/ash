@@ -1,0 +1,9 @@
+
+#-------------
+# LOCAL RULES
+#-------------
+
+alert icmp !$HOME_NET any -> $HOME_NET any (msg:"ICMP testing rule"; sid:1001;)
+#alert udp !$HOME_NET any -> $HOME_NET any (msg:"UDP testing rule"; sid:1002;)
+#alert tcp !$HOME_NET any -> $HOME_NET any (msg:"TCP testing rule"; sid:1003;)
+

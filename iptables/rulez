@@ -23,6 +23,6 @@
 \iptables -A OUTPUT -j ACCEPT
 \iptables -S > /etc/iptables/rulez
 \iptables -S > /var/iptables/rulez
-\/bin/busybox sed -i '1s/.*/*filter/' /etc/iptables/rulez
-\/bin/busybox echo "COMMIT" >> /etc/iptables/rulez
+\sed -i '1s/.*/*filter/' /etc/iptables/rulez
+\echo "COMMIT" >> /etc/iptables/rulez
 \iptables-save

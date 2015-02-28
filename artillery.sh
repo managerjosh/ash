@@ -7,8 +7,6 @@
 \/bin/busybox rm -r /var/artillery
 python /tmp/artillery/setup.py
 \cp -r ash/artillery/config /var/artillery
+python /tmp/artillery/restart_server.py
 
-#echo "Edit Bind Interface, Example: 192.168.0.22;press Enter to Edit Config(Nano), Remember to save"
-#read $pressEnter
-#nano +97 /var/artillery/config
 

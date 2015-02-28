@@ -16,15 +16,15 @@
 \/bin/busybox sed -i '93s/.*/    if is_posix():' /tmp/artillery/setup.py 
 \/bin/busybox rm -r /var/artillery
 python /tmp/artillery/setup.py
-#echo "Add Whitelist IPs Ex: 192.168.0.22, etc;Press Enter to Edit Config(Nano), Remember to save"
-#read $pressEnter
-#nano +33 /var/artillery/config
+
 \ cd /var/artillery
 \/bin/busybox sed -i '18s/.*/MONITOR_FOLDERS="\/proc","\/sys","\/sh","\/tmp","\/home","\/dev","\/lib","\/lib64","\/opt","\/run","\/srv","\/var\/www","\/etc","\/var","\/bin","\/sbin","\/usr","\/boot"/' /var/artillery/config
 \/bin/busybox sed -i '30s/.*/HONEYPOT_BAN="ON"/' /var/artillery/config
 \/bin/busybox sed -i '69s/.*/SSH_BRUTE_ATTEMPTS="1"/' /var/artillery/config
 \/bin/busybox sed -i '72s/.*/FTP_BRUTE_MONITOR="ON"/' /var/artillery/config
 \/bin/busybox sed -i '75s/.*/FTP_BRUTE_ATTEMPTS="1"/' /var/artillery/config
+\/bin/busybox sed -i '84s/.*/ANTI_DOS_PORTS="80,443,8080,9300,8443,9443"/' /var/artillery/config
+
 #echo "Edit Bind Interface, Example: 192.168.0.22;press Enter to Edit Config(Nano), Remember to save"
 #read $pressEnter
 #nano +97 /var/artillery/config

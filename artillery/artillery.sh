@@ -52,20 +52,4 @@ python /tmp/artillery/setup.py
 #read $pressEnter
 #nano +97 /var/artillery/config
 \python /var/artillery/restart_server.py
-\apt-get remove netcat* ssh* telnet* -y
-\echo "TODO: Artillery is installed & activated, Adjust Whitelist in: /var/artillery/config then restart_server.py"
-\echo "TODO: Kill jobs"
-\echo "TODO: Change shells of Games, Nobody, and any other that uses /bin/bash to /bin/false"
-\echo "TODO: Tweak Firewall rules, save rules"
-\echo "TODO: Check ~/.mysql_history"
-\echo "TODO: Check History"
-\echo "TODO: CHANGE PASSWORDS"
-\echo "---!!!---REMEMBER THAT /etc/passwd & /etc/shadow ARE IMMUTABLE---!!!!---"
-\echo "---!!!---REMEMBER THAT /etc/passwd & /etc/shadow ARE IMMUTABLE---!!!!---"
-\echo "---!!!---REMEMBER THAT /etc/passwd & /etc/shadow ARE IMMUTABLE---!!!!---"
-\apt-get clean
-\apt-get autoclean
-\apt-get autoremove
-\chattr +i /etc/passwd
-\chattr +i /etc/shadow
 

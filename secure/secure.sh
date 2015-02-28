@@ -22,6 +22,7 @@
 \update-rc.d/telnet disable
 \/etc/init.d/samba stop
 \update-rc.d/samba disable
+\apt-get remove netcat* ssh* telnet* -y
 \cp /etc/security/limits.conf /etc/security/limits.conf.old
 \chmod 444 /etc/security/limits.conf.old
 \chattr +i /etc/security/limits.conf.old

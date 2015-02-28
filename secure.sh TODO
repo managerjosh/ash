@@ -1,3 +1,7 @@
+change passwords
+change mysql/other db passwords
+lock other shells
+
 # 19. **Remount all mounts to read-only except logging
 # 20. **Backup mysql/postgre databases
 # 21. **Lock Grub

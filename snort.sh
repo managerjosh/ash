@@ -3,11 +3,14 @@ cd /usr/src
 wget http://www.tcpdump.org/release/libpcap-1.6.2.tar.gz  http://libdnet.googlecode.com/files/libdnet-1.12.tgz https://www.snort.org/downloads/snort/daq-2.0.4.tar.gz https://snort.org/downloads/snort/snort-2.9.7.0.tar.gz
 tar -xzf libpcap-1.6.2.tar.gz && cd /usr/src/libpcap-1.6.2
 ./configure --prefix=/usr && make && make install 
-tar -xzf /usr/src/libdnet-1.12.tgz z && cd /usr/src/libdnet-1.12
+cd /usr/src/
+tar -xzf libdnet-1.12.tgz z && cd /usr/src/libdnet-1.12
 ./configure --prefix=/usr --enable-shared && make && make install
-tar -xzf /usr/src/daq-2.0.4.tar.gz && cd /usr/src/daq-2.0.4
+cd /usr/src/
+tar -xzf daq-2.0.4.tar.gz && cd /usr/src/daq-2.0.4
 ./configure && make && make install
-tar -xzf /usr/src/snort-2.9.7.0.tar.gz && cd /usr/src/snort-2.9.7.0
+cd /usr/src/
+tar -xzf snort-2.9.7.0.tar.gz && cd /usr/src/snort-2.9.7.0
 ./configure --enable-sourcefire && make && make install
 mkdir /usr/local/etc/snort /usr/local/etc/snort/rules /var/log/snort /usr/local/lib/snort_dynamicrules
 groupadd snort && useradd -g snort snort
@@ -20,4 +23,4 @@ touch /usr/local/etc/snort/rules/white_list.rules /usr/local/etc/snort/rules/bla
 ipaddress=$(hostname -I) ; sed -i "45s/.*/ipvar HOME_NET $ipaddress/" /usr/local/etc/snort/snort.conf
 sed -i "48s/.*/ipvar EXTERNAL_NET !$ipaddress/" /usr/local/etc/snort/snort.conf
 ldconfig
-snort -de -A fast -i1 -c /usr/local/etc/snort/snort.conf &
+snort -A fast -i1 -c /usr/local/etc/snort/snort.conf &

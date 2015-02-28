@@ -1,1 +1,1 @@
-Securing a Debian Box while providing real-time logging
+Securing a Debian while providing real-time IDS + IPS + Logging + Gui

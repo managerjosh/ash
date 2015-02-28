@@ -18,6 +18,6 @@ touch /usr/local/etc/snort/rules/white_list.rules /usr/local/etc/snort/rules/bla
 groupadd snort && useradd -g snort snort
 cp /usr/src/snort-2.9.7.0/etc/*.conf /usr/local/etc/snort
 cp /usr/src/snort-2.9.7.0/etc/*.map /usr/local/etc/snort
-cp /usr/src/snort-2.9.7.0/snort.conf /usr/local/etc/snort
+cp /root/ash/snort/snort.conf /usr/local/etc/snort
 touch /usr/local/etc/snort/rules/white_list.rules
 touch /usr/local/etc/snort/rules/black_list.rules

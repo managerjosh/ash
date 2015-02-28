@@ -1,28 +1,5 @@
-# Debian Secure Script by c2_
-# Environment: Assume network interface configured, no Systemd, tested Debian 7.7, need assume busybox, sed, python
-# Execute:
-# \bash ash.sh
-# What it does:
-# 1.  Unalias all alias
-# 2.  Corrects path
-# 3.  Remove immutable lock on /etc/passwd & /etc/shadow
-# 4.  Uses busybox to edit /etc/passwd root's shell
-# 5.  Remove immutable lock on ~/.bash_profile & ~/.bashrc
-# 6.  Stops common services: cron, netcat, ssh, telnet, samba
-# 7.  Set Max simultaneous Logins for root, copys current config to .old
-# 8.  Creates Blank file
-# 9.  Cleans out repository and bashprofile startup scripts
-# 10. Makes a directory for iptables
-# 11. Begin adding firewall rules
-# 12. Save rules to /etc/iptables/rulez & /var/iptables/rulez
-# 13. Adjusts repository
-# 14. Patches/Updates
-# 15. Install tools and compilers
-# 16. Download Artillery, Configure, Install, Start
-# 17. Removes netcat, ssh, and telnet
-# 18. Clean unneeded packages
+# Debian Artillery Script by c2_
 
-\apt-get install wget nano make g++ bison flex git python sed htop libpcre3-dev zlib1g-dev libpcap-dev -y
 \cd /tmp
 \rm -r /tmp/artillery
 \git clone https://github.com/trustedsec/artillery

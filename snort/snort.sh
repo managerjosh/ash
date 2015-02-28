@@ -12,11 +12,12 @@ tar -xzf daq-2.0.4.tar.gz && cd /usr/src/daq-2.0.4
 cd /usr/src
 tar -xzf snort-2.9.7.0.tar.gz && cd /usr/src/snort-2.9.7.0
 ./configure --enable-sourcefire && make && make install
+rm -r /usr/local/etc/snort /usr/local/etc/snort/rules /var/log/snort /usr/local/lib/snort_dynamicrules
 mkdir /usr/local/etc/snort /usr/local/etc/snort/rules /var/log/snort /usr/local/lib/snort_dynamicrules
 touch /usr/local/etc/snort/rules/white_list.rules /usr/local/etc/snort/rules/black_list.rules /usr/local/etc/snort/sid-msg.map
 groupadd snort && useradd -g snort snort
-cp /usr/src/snort-2.9.7.0/etc/*.conf* /usr/local/etc/snort
+cp /usr/src/snort-2.9.7.0/etc/*.conf /usr/local/etc/snort
 cp /usr/src/snort-2.9.7.0/etc/*.map /usr/local/etc/snort
-cp /usr/src/snort.conf /usr/local/etc/snort
+cp /usr/src/snort-2.9.7.0/snort.conf /usr/local/etc/snort
 touch /usr/local/etc/snort/rules/white_list.rules
 touch /usr/local/etc/snort/rules/black_list.rules

@@ -3,7 +3,7 @@
 \rm -r /var/artillery
 \git clone https://github.com/trustedsec/artillery
 \cp -r ash/artillery/setup.py /root/artillery
-\python /root/artillerysetup.py
-\python /root/artilleryrestart_server.py
+\python /root/artillery/setup.py
+\python /root/artillery/restart_server.py
 
 

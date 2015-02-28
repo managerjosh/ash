@@ -1,2 +1,1 @@
-# ash
-a_rrrrr_tilery
+Securing a Debian Box while providing real-time logging

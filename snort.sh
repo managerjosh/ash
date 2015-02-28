@@ -19,8 +19,11 @@ touch /usr/local/etc/snort/rules/white_list.rules /usr/local/etc/snort/rules/bla
 groupadd snort && useradd -g snort snort
 cp /usr/src/snort-2.9.7.0/etc/*.conf /usr/local/etc/snort
 cp /usr/src/snort-2.9.7.0/etc/*.map /usr/local/etc/snort
+cp /usr/src/snort-2.9.7.0/etc/*.config /usr/local/etc/snort
 cp /root/ash/snort/snort.conf /usr/local/etc/snort
+cp /root/ash/snort/local.rules /usr/local/etc/snort/rules
 touch /usr/local/etc/snort/rules/white_list.rules
 touch /usr/local/etc/snort/rules/black_list.rules
-ipaddress=$(hostname -I) ; 
+ipaddress=$(hostname -I) ; sed -i "45s/.*/ipvar HOME_NET $ipaddress\/24/" /usr/local/etc/snort/snort.conf
+sed -i "48s/.*/ipvar EXTERNAL_NET !$HOME_NET/" /usr/local/etc/snort/snort.conf
 

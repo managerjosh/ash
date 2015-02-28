@@ -8,8 +8,7 @@
 \/bin/busybox sed -i '17s/.*/ /' /tmp/artillery/setup.py
 \/bin/busybox sed -i '18s/.*/ /' /tmp/artillery/setup.py
 \/bin/busybox sed -i '19s/.*/ /' /tmp/artillery/setup.py
-\/bin/busybox sed -i '20s/.*/ /' /tmp/artillery/setup.py
-\/bin/busybox sed -i '21s/.*/ /' /tmp/artillery/setup.py
+\/bin/busybox sed -i '21s/.*/    answer = "yes"/' /tmp/artillery/setup.py
 \/bin/busybox sed -i '22s/.*/answer = "yes"/' /tmp/artillery/setup.py
 \/bin/busybox sed -i '69s/.*/        choice = "yes"/' /tmp/artillery/setup.py 
 \/bin/busybox sed -i '91s/.*/    choice = "yes"/' /tmp/artillery/setup.py 
@@ -17,7 +16,7 @@
 \/bin/busybox rm -r /var/artillery
 python /tmp/artillery/setup.py
 
-\ cd /var/artillery
+\cd /var/artillery
 \/bin/busybox sed -i '18s/.*/MONITOR_FOLDERS="\/proc","\/sys","\/sh","\/tmp","\/home","\/dev","\/lib","\/lib64","\/opt","\/run","\/srv","\/var\/www","\/etc","\/var","\/bin","\/sbin","\/usr","\/boot"/' /var/artillery/config
 \/bin/busybox sed -i '30s/.*/HONEYPOT_BAN="ON"/' /var/artillery/config
 \/bin/busybox sed -i '69s/.*/SSH_BRUTE_ATTEMPTS="1"/' /var/artillery/config

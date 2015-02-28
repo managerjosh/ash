@@ -1,4 +1,4 @@
-bash artillery.sh
-bash snort.sh
-bash logstash.sh
-bash kibana.sh
+bash ash/artillery.sh
+bash ash/snort.sh
+bash ash/logstash.sh
+bash ash/kibana.sh

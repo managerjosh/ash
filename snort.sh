@@ -25,6 +25,6 @@ cp /root/ash/snort/local.rules /usr/local/etc/snort/rules
 touch /usr/local/etc/snort/rules/white_list.rules
 touch /usr/local/etc/snort/rules/black_list.rules
 ipaddress=$(hostname -I) ; sed -i "45s/.*/ipvar HOME_NET $ipaddress/" /usr/local/etc/snort/snort.conf
-sed -i "48s/.*/ipvar EXTERNAL_NET !$HOME_NET/" /usr/local/etc/snort/snort.conf
+sed -i "48s/.*/ipvar EXTERNAL_NET !$ipaddress/" /usr/local/etc/snort/snort.conf
+ldconfig
 snort -A console -i1 -c /usr/local/etc/snort/snort.conf
-

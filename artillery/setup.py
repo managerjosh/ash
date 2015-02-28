@@ -17,9 +17,8 @@ Written by: Dave Kennedy (ReL1K)
 
 
 
-
-
-answer = "yes"
+if not os.path.isfile("/etc/init.d/artillery"):
+    answer = "yes"
 if answer.lower() == "y" or answer.lower() == "yes":
     if is_posix():
         kill_artillery()

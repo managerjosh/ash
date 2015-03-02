@@ -1,4 +1,4 @@
-# Securing a Linux while providing real-time IDS + IPS + Logging + Gui
+# Securing a Linux with real-time IDS + IPS + Logging + Gui
 
 # 1. Secure			  		- In Progress
 # 2. Artillery 				- Finished!

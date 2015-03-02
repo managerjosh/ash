@@ -38,13 +38,19 @@
 \chattr +i /etc/security/limits.conf
 \cd
 \bash ash/iptables/rulez
-\/bin/busybox echo "deb http://ftp.us.debian.org/debian/ wheezy main" >> /etc/apt/sources.list
-\/bin/busybox echo "deb-src http://ftp.us.debian.org/debian/ wheezy main" >> /etc/apt/sources.list
-\/bin/busybox echo "deb http://security.debian.org/ wheezy/updates main" >> /etc/apt/sources.list
-\/bin/busybox echo "deb-src http://security.debian.org/ wheezy/updates main" >> /etc/apt/sources.list
-\/bin/busybox echo "deb http://ftp.us.debian.org/debian/ wheezy-updates main" >> /etc/apt/sources.list
-\/bin/busybox echo "deb-src http://ftp.us.debian.org/debian/ wheezy-updates main" >> /etc/apt/sources.list
-#echo "deb http://packages.dotdeb.org wheezy all" >> /etc/apt/sources.list
-#echo "deb-src http://packages.dotdeb.org wheezy all">> /etc/apt/sources.list
+\/bin/busybox echo "deb http://us.archive.ubuntu.com/ubuntu/ trusty main restricted" >> /etc/apt/sources.list
+\/bin/busybox echo "deb-src http://us.archive.ubuntu.com/ubuntu/ trusty main restricted" >> /etc/apt/sources.list
+\/bin/busybox echo "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates main restricted" >> /etc/apt/sources.list
+\/bin/busybox echo "deb-src http://us.archive.ubuntu.com/ubuntu/ trusty-updates main restricted" >> /etc/apt/sources.list
+\/bin/busybox echo "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe" >> /etc/apt/sources.list
+\/bin/busybox echo "deb-src http://us.archive.ubuntu.com/ubuntu/ trusty universe" >> /etc/apt/sources.list
+\/bin/busybox echo "deb http://us.archive.ubuntu.com/ubuntu/ trusty multiverse" >> /etc/apt/sources.list
+\/bin/busybox echo "deb-src http://us.archive.ubuntu.com/ubuntu/ trusty multiverse" >> /etc/apt/sources.list
+\/bin/busybox echo "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates multiverse" >> /etc/apt/sources.list
+\/bin/busybox echo "deb-src http://us.archive.ubuntu.com/ubuntu/ trusty-updates multiverse" >> /etc/apt/sources.list
+\/bin/busybox echo "deb http://us.archive.ubuntu.com/ubuntu/ trusty-backports main restricted universe multiverse" >> /etc/apt/sources.list
+\/bin/busybox echo "deb-src http://us.archive.ubuntu.com/ubuntu/ trusty-backports main restricted universe multiverse" >> /etc/apt/sources.list
+
+
 \apt-get update -y
 \apt-get upgrade -y

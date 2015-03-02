@@ -51,7 +51,7 @@
 \/bin/busybox echo "deb http://us.archive.ubuntu.com/ubuntu/ trusty-backports main restricted universe multiverse" >> /etc/apt/sources.list
 \/bin/busybox echo "deb-src http://us.archive.ubuntu.com/ubuntu/ trusty-backports main restricted universe multiverse" >> /etc/apt/sources.list
 
-\/bin/busybox echo "deb http://us.archive.ubuntu.com/ubuntu/ trusty-security mainnrestricted" >> /etc/apt/sources.list
+\/bin/busybox echo "deb http://us.archive.ubuntu.com/ubuntu/ trusty-security main restricted" >> /etc/apt/sources.list
 \/bin/busybox echo "deb-src http://us.archive.ubuntu.com/ubuntu/ trusty-security main restricted" >> /etc/apt/sources.list
 
 \/bin/busybox echo "deb http://security.ubuntu.com/ubuntu/ trusty-security main restricted" >> /etc/apt/sources.list

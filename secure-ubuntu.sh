@@ -56,10 +56,10 @@
 
 \/bin/busybox echo "deb http://security.ubuntu.com/ubuntu/ trusty-security main restricted" >> /etc/apt/sources.list
 \/bin/busybox echo "deb-src http://security.ubuntu.com/ubuntu/ trusty-security main restricted" >> /etc/apt/sources.list
-\/bin/busybox echo "deb http://security.ubuntu.com/ubuntu/ trusty-security main universe" >> /etc/apt/sources.list
-\/bin/busybox echo "deb-src http://security.ubuntu.com/ubuntu/ trusty-security main universe" >> /etc/apt/sources.list
-\/bin/busybox echo "deb http://security.ubuntu.com/ubuntu/ trusty-security main multiverse" >> /etc/apt/sources.list
-\/bin/busybox echo "deb-src http://security.ubuntu.com/ubuntu/ trusty-security main multiverse" >> /etc/apt/sources.list
+\/bin/busybox echo "deb http://security.ubuntu.com/ubuntu/ trusty-security universe" >> /etc/apt/sources.list
+\/bin/busybox echo "deb-src http://security.ubuntu.com/ubuntu/ trusty-security universe" >> /etc/apt/sources.list
+\/bin/busybox echo "deb http://security.ubuntu.com/ubuntu/ trusty-security multiverse" >> /etc/apt/sources.list
+\/bin/busybox echo "deb-src http://security.ubuntu.com/ubuntu/ trusty-security multiverse" >> /etc/apt/sources.list
 
 \apt-get update -y
 \apt-get upgrade -y

@@ -1,2 +1,8 @@
 $ cd /usr/ports/devel/git
 $ make install
+# pkg_add -r bash
+# bash
+# chsh -s /usr/local/bin/bash {username}
+# chsh -s /usr/local/bin/bash vivek
+# chsh -s bash
+# grep root /etc/passwd

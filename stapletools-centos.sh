@@ -1,1 +1,1 @@
-yum install wget net-tools htop -y
+yum install wget net-tools htop nano -y

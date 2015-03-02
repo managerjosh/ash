@@ -1,12 +1,12 @@
-Securing a Debian while providing real-time IDS + IPS + Logging + Gui
+# Securing a Debian while providing real-time IDS + IPS + Logging + Gui
 
-# 1. **Secure					- In Progress
-Artillery 				- Finished!
-Snort  					- In Progress
-Logstash 				- Not Started!
-Kibana 					- Not Started!
-Ossec  					- Not Started!
-Bro  					- Not Started!
+# 1. Secure			  		- In Progress
+# 2. Artillery 				- Finished!
+# 3. Snort  					- In Progress
+# 4. Logstash 				- Not Started!
+# 5. Kibana 					- Not Started!
+# 6. Ossec  					- Not Started!
+# 7. Bro  				  	- Not Started!
 
 
 change passwords

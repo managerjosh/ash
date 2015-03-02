@@ -1,12 +1,12 @@
 # Linux with real-time IDS + IPS + Logging
 
 # 1. Secure			  		- In Progress
-# 2. Artillery 				- Finished!
-# 3. Snort  					- In Progress
-# 4. Logstash 				- Not Started!
-# 5. Kibana 					- Not Started!
-# 6. Ossec  					- Not Started!
-# 7. Bro  				  	- Not Started!
+# 2. @rti|lery 				- Finished!
+# 3. Sn0rt  					- In Progress
+# 4. L0gst@sh 				- Not Started!
+# 5. Kib@na 					- Not Started!
+# 6. 0ss3c  					- Not Started!
+# 7. 8r0  				  	- Not Started!
 
 
 **change passwords
@@ -23,4 +23,4 @@
 **Configure Syslog-ng/Rsyslog for log stash
 **Configure DNS and Resolv
 **Lock user login attempts
-**Artillery Honeypot generate Blacklist file for Infrastructure team
+**Arti|lery Honeypot generate Bl@cklist file for Infr@structure team

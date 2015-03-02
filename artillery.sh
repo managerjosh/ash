@@ -1,4 +1,4 @@
-# Artillery Script by c2_
+# Artillery Script
 \rm -r /var/artillery
 \rm -r -f /var/artillery
 \git clone https://github.com/trustedsec/artillery

@@ -1,4 +1,4 @@
-# Linux with real-time IDS + IPS + Logging
+# L|nux with re@l-time |D$ + |P$ + L0ggin9
 
 # 1. Secure			  		- In Progress
 # 2. @rti|lery 				- Finished!
@@ -10,7 +10,7 @@
 
 
 **change passwords
-**change mysql/other db passwords
+**change mysql/other db p@sswords
 **lock other shells
 
 **Remount all mounts to read-only except logging

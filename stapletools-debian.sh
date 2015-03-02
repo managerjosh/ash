@@ -1,1 +1,1 @@
-apt-get install make htop net-tools
+apt-get install make htop net-tools -y

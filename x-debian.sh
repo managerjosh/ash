@@ -1,3 +1,4 @@
+# execute all scripts
 bash ash/secure.sh
 bash ash/artillery.sh
 bash ash/snort.sh

@@ -61,8 +61,5 @@
 \/bin/busybox echo "deb http://security.ubuntu.com/ubuntu/ trusty-security main multiverse" >> /etc/apt/sources.list
 \/bin/busybox echo "deb-src http://security.ubuntu.com/ubuntu/ trusty-security main multiverse" >> /etc/apt/sources.list
 
-
-
-
 \apt-get update -y
 \apt-get upgrade -y

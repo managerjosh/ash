@@ -1,3 +1,6 @@
+# use fucking dhcpcd first
+systemctl restart dhcpcd
+
 # Find interface
 # ip addr
 # ip link
@@ -22,8 +25,6 @@ Check connection of interface
 ip addr add $ip_address broadcast $ip_broadcast dev $interface_name
 
 #ip addr add IP_address/24 broadcast 0.0.0.255 dev interface_name
-
-ip add default via $ip_defaultGateway
 
 ip route add default via $ip_defaultGateway
 

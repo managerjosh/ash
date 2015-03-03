@@ -7,6 +7,9 @@ echo "---!!!--SET PASSWORD FOR USER--!!!---"
 echo "---!!!--SET PASSWORD FOR USER--!!!---"
 echo "---!!!--SET PASSWORD FOR USER--!!!---"
 echo "---!!!--SET PASSWORD FOR USER--!!!---"
+
+read thePassword
+echo $thePassword | passwd smbuser --stdin
 passwd smbuser
 
 

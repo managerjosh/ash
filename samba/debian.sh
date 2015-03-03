@@ -1,4 +1,8 @@
-Useradd smbuser –m –G domainusers
+userdel smbuser
+groupdel domainusers
+
+groupadd domainusers
+useradd smbuser –m –G domainusers
 echo "---!!!--SET PASSWORD FOR USER--!!!---"
 echo "---!!!--SET PASSWORD FOR USER--!!!---"
 echo "---!!!--SET PASSWORD FOR USER--!!!---"
@@ -25,7 +29,7 @@ getsebool –a | grep smb
 setsebool –P samba_domain_controller on
 
 /etc/init.d/samba start
-groupadd domainusers
+
 mkdir /var/smb
 chmod -R root:domainusers /var/smb
 chown root:smbuser /var/smb

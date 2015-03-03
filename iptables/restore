@@ -1,3 +1,4 @@
+*filter
 iptables -A INPUT -i lo -j ACCEPT
 iptables -A INPUT ! -i lo -d 127.0.0.0/8 -j REJECT
 iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
@@ -11,3 +12,4 @@ iptables -A INPUT -m limit --limit 5/min -j LOG --log-prefix "iptables denied: "
 iptables -A INPUT -j REJECT
 iptables -A FORWARD -j REJECT
 iptables -A OUTPUT -j ACCEPT
+COMMIT

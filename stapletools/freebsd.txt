@@ -6,3 +6,5 @@ $ make install
 # chsh -s /usr/local/bin/bash vivek
 # chsh -s bash
 # grep root /etc/passwd
+
+# syslog support

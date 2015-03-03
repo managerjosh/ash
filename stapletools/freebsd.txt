@@ -12,4 +12,10 @@ $ make install
 echo /usr/local/bin/bash >> /etc/shells
 chsh -s /usr/local/bin/bash
 
+# UPDATE
 portsnap fetch update
+
+# WGET
+# cd /usr/ports/ftp/wget
+# make install clean
+# rehash

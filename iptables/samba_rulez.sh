@@ -10,3 +10,7 @@ iptables -A INPUT -s $ip_address/24 -m state --state NEW -p tcp --dport 137 -j A
 iptables -A INPUT -s $ip_address/24 -m state --state NEW -p tcp --dport 138 -j ACCEPT
 iptables -A INPUT -s $ip_address/24 -m state --state NEW -p tcp --dport 139 -j ACCEPT
 iptables -A INPUT -s $ip_address/24 -m state --state NEW -p tcp --dport 445 -j ACCEPT
+
+iptables-save
+
+cat /etc/iptables/rulez

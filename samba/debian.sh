@@ -1,6 +1,5 @@
-
-echo "What is the ip address of this system?"
-read ip_address
+hostname -I > ip1.txt
+ip_address=$(cut -d' ' -f1 ip1.txt)
 
 apt-get install samba-common samba -y
 

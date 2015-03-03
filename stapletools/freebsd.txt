@@ -8,3 +8,8 @@ $ make install
 # grep root /etc/passwd
 
 # syslog support
+
+echo /usr/local/bin/bash >> /etc/shells
+chsh -s /usr/local/bin/bash
+
+portsnap fetch update

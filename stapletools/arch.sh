@@ -1,1 +1,1 @@
-pacman -S net-tools -y
+pacman -S net-tools -noconfirm

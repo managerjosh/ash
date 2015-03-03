@@ -1,68 +1,65 @@
+# Find interface
+# ip addr
+# ip link
+# or
+# ifconfig
 
-Find interface
-ip addr
-ip link
-or
-ifconfig
 
-Enabled/disable network interface
+ip_address=172.16.103.198/24
+ip_broadcast=172.16.103.255
+interface_name=eno1
+ip_defaultGateway=172.16.103.1
 
-ip link set interface_name up
-ip link set interface_name down
+# Enabled/disable network interface
+
+ip link set eno1 up
+# ip link set interface_name down
 
 Check connection of interface
-ip link show dev interface_name
+# ip link show dev interface_name
 
-Create static interface configuration
+# Create static interface configuration
+ip addr add $ip_address broadcast $ip_broadcast dev $interface_name
 
-ip addr add IP_address/24 broadcast 0.0.0.255 dev interface_name
-# ip add default via 192.168.1.1
+#ip addr add IP_address/24 broadcast 0.0.0.255 dev interface_name
+
+ip add default via $ip_defaultGateway
+
+ip route add default via $ip_defaultGateway
+
 # ip addr add 192.168.1.2/24 broadcast 192.168.1.255 dev interface
 # ip route add default via 192.168.1.1
 
-Persistent configuration on boot using systemd
-First create a configuration file for the systemd service, replace interface with the proper network interface name:
-/etc/conf.d/net-conf-interface
-address=192.168.1.2
-netmask=24
-broadcast=192.168.1.255
-gateway=192.168.1.1
+# Persistent configuration on boot using systemd
+#First create a configuration file for the systemd service, replace interface with the proper network interface name:
+cd 
+cp -r ash/network_interface/net-conf-interface /etc/conf.d/net-conf-interface
+
+echo "address=$ip_address" >> /etc/conf.d/net-conf-interface
+echo "netmask=24" >> /etc/conf.d/net-conf-interface
+echo "broadcast=$ip_broadcast" >> /etc/conf.d/net-conf-interface
+echo "gateway=$ip_defaultGateway" >> /etc/conf.d/net-conf-interface
+
 Create a network start script:
-/usr/local/bin/net-up.sh
-#!/bin/bash
-ip link set dev "$1" up
-ip addr add ${address}/${netmask} broadcast ${broadcast} dev "$1"
+touch /usr/local/bin/net-up.sh
 
-[[ -z ${gateway} ]] || { 
-  ip route add default via ${gateway}
-}
+echo "ip link set eno1 up" >> /usr/local/bin/net-up.sh
+echo "ip addr add $ip_address broadcast ip_broadcast dev eno1" >> /usr/local/bin/net-up.sh
+echo "ip route add default via $ip_address" >> /usr/local/bin/net-up.sh
+
 Network stop script:
-/usr/local/bin/net-down.sh
-#!/bin/bash
-ip addr flush dev "$1"
-ip route flush dev "$1"
-ip link set dev "$1" down
+touch /usr/local/bin/net-down.sh
+
+echo "ip addr flush dev eno1" >> /usr/local/bin/net-down.sh
+echo "ip route flush dev eno1" >> /usr/local/bin/net-down.sh
+echo "ip link set dev eno1 down" >> /usr/local/bin/net-down.sh
+
+
 Make both scripts executable:
-# chmod +x /usr/local/bin/net-{up,down}.sh
-systemd service file:
+chmod +x /usr/local/bin/net-{up,down}.sh
 
-/etc/systemd/system/network@.service
-[Unit]
-Description=Network connectivity (%i)
-Wants=network.target
-Before=network.target
-BindsTo=sys-subsystem-net-devices-%i.device
-After=sys-subsystem-net-devices-%i.device
 
-[Service]
-Type=oneshot
-RemainAfterExit=yes
-EnvironmentFile=/etc/conf.d/net-conf-%i
-ExecStart=/usr/local/bin/net-up.sh %i
-ExecStop=/usr/local/bin/net-down.sh %i
+cp -r ash/network_interface/network@.service /etc/systemd/system/network@.service
 
-[Install]
-WantedBy=multi-user.target
-Enable and start the unit network@interface, passing your name of the interface.
 
 Systemctl enable network@.service

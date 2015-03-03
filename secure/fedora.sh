@@ -4,4 +4,10 @@ systemctl stop netcat
 chkconfig --level 0123456 sshd off
 
 
+echo "UPDATING SYSTEM TAKES 526 PACKAGES!!! WILL YOU UPDATE???"
+read answerUpdate
+
+if (answerUpdate == yes)
 yum update -y && yum upgrade -y
+else
+echo "EXITING!"

@@ -1,0 +1,68 @@
+
+Find interface
+ip addr
+ip link
+or
+ifconfig
+
+Enabled/disable network interface
+
+ip link set interface_name up
+ip link set interface_name down
+
+Check connection of interface
+ip link show dev interface_name
+
+Create static interface configuration
+
+ip addr add IP_address/24 broadcast 0.0.0.255 dev interface_name
+# ip add default via 192.168.1.1
+# ip addr add 192.168.1.2/24 broadcast 192.168.1.255 dev interface
+# ip route add default via 192.168.1.1
+
+Persistent configuration on boot using systemd
+First create a configuration file for the systemd service, replace interface with the proper network interface name:
+/etc/conf.d/net-conf-interface
+address=192.168.1.2
+netmask=24
+broadcast=192.168.1.255
+gateway=192.168.1.1
+Create a network start script:
+/usr/local/bin/net-up.sh
+#!/bin/bash
+ip link set dev "$1" up
+ip addr add ${address}/${netmask} broadcast ${broadcast} dev "$1"
+
+[[ -z ${gateway} ]] || { 
+  ip route add default via ${gateway}
+}
+Network stop script:
+/usr/local/bin/net-down.sh
+#!/bin/bash
+ip addr flush dev "$1"
+ip route flush dev "$1"
+ip link set dev "$1" down
+Make both scripts executable:
+# chmod +x /usr/local/bin/net-{up,down}.sh
+systemd service file:
+
+/etc/systemd/system/network@.service
+[Unit]
+Description=Network connectivity (%i)
+Wants=network.target
+Before=network.target
+BindsTo=sys-subsystem-net-devices-%i.device
+After=sys-subsystem-net-devices-%i.device
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+EnvironmentFile=/etc/conf.d/net-conf-%i
+ExecStart=/usr/local/bin/net-up.sh %i
+ExecStop=/usr/local/bin/net-down.sh %i
+
+[Install]
+WantedBy=multi-user.target
+Enable and start the unit network@interface, passing your name of the interface.
+
+Systemctl enable network@.service

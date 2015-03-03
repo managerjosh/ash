@@ -1,7 +1,7 @@
-cd /usr/ports/databases/mysql51-server
+cd /usr/ports/databases/mysql55-server
 make
 
-cd /usr/ports/databases/mysql51-client
+cd /usr/ports/databases/mysql55-client
 make
 
 # The standard port installation places the server into /usr/local/libexec/mysqld, with the startup script for the MySQL server placed in /usr/local/etc/rc.d/mysql-server.

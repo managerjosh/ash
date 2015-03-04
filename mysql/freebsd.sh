@@ -1,10 +1,10 @@
 # http://www.freebsdmadeeasy.com/tutorials/web-server/install-mysql-server-on-freebsd.php
 # note mysql55 not working
 cd /usr/ports/databases/mysql51-server
-make
+make install
 
 cd /usr/ports/databases/mysql51-client
-make
+make install
 
 # The standard port installation places the server into /usr/local/libexec/mysqld, with the startup script for the MySQL server placed in /usr/local/etc/rc.d/mysql-server.
 

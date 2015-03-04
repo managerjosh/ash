@@ -5,3 +5,4 @@ yum install tcl gcc jemalloc -y
 make distclean
 make install
 make test
+make

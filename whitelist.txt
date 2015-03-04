@@ -14,3 +14,4 @@ http://www.freebsdmadeeasy.com/index.htm
 http://dev.mysql.com/doc/
 http://www.postgresql.org/docs/manuals/
 wiki.centos.org/
+https://www.digitalocean.com/community/tutorials/

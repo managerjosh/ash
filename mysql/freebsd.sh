@@ -17,3 +17,5 @@ make
 
 # cd /usr/ports/databases/mysql51-client
 # make deinstall
+
+sh /usr/local/etc/rc.d/mysql-server.sh start

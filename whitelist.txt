@@ -11,3 +11,5 @@ https://wiki.archlinux.org/
 http://wiki.gentoo.org/
 http://www.winpcap.org/install/default.htm
 http://www.freebsdmadeeasy.com/index.htm
+http://dev.mysql.com/doc/
+http://www.postgresql.org/docs/manuals/

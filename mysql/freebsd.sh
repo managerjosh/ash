@@ -21,4 +21,11 @@ echo 'mysql_enable="YES"' >> /etc/rc.conf
 
 sh /usr/local/etc/rc.d/mysql-server.sh start
 
+mysql -u root
+# SET PASSWORD FOR ''@'localhost' = PASSWORD('newpwd');
+# SET PASSWORD FOR ''@'host_name' = PASSWORD('newpwd');
+# To set a password for the root account use
 
+# mysql -u root
+# SET PASSWORD FOR 'root'@'localhost' = PASSWORD('newpwd');
+# SET PASSWORD FOR 'root'@'host_name' = PASSWORD('newpwd');

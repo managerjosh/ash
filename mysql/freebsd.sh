@@ -1,9 +1,10 @@
+
+# https://fosskb.wordpress.com/2014/04/10/famp-installing-apache2-4-mysql-php-on-freebsd-10/
 # http://www.freebsdmadeeasy.com/tutorials/web-server/install-mysql-server-on-freebsd.php
-# note mysql55 not working
-cd /usr/ports/databases/mysql51-server
+cd /usr/ports/databases/mysql56-server
 make install
 
-cd /usr/ports/databases/mysql51-client
+cd /usr/ports/databases/mysql56-client
 make install
 
 # The standard port installation places the server into /usr/local/libexec/mysqld, with the startup script for the MySQL server placed in /usr/local/etc/rc.d/mysql-server.
@@ -20,8 +21,10 @@ make install
 echo 'mysql_enable="YES"' >> /etc/rc.conf
 
 sh /usr/local/etc/rc.d/mysql-server.sh start
+/usr/local/etc/rc.d/mysql-server onestart
 
-mysql -u root
+rehash
+mysqladmin -uroot password ''
 # SET PASSWORD FOR ''@'localhost' = PASSWORD('newpwd');
 # SET PASSWORD FOR ''@'host_name' = PASSWORD('newpwd');
 # To set a password for the root account use

@@ -1,7 +1,7 @@
 
 download.redis.io
 github.com/trustedsec/artillery
-www.binarydefense.com/banlist.txt
+binarydefense.com/banlist.txt
 github.com/appvise/ash
 ftp.us.debian.org/debian/
 deb http://security.debian.org/

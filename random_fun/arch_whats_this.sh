@@ -1,4 +1,5 @@
-!/bin/sh
+# https://wiki.archlinux.org/index.php/X_resources
+#!/bin/sh
 # Original Posted at http://crunchbang.org/forums/viewtopic.php?pid=126921%23p126921#p126921
 # [ESC] character in original post removed here.
 

@@ -7,3 +7,5 @@ ftp.us.debian.org/debian/
 deb http://security.debian.org/
 https://snort.org/downloads
 https://snort.org/users/sign_in
+https://wiki.archlinux.org/
+http://wiki.gentoo.org/

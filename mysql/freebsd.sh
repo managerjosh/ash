@@ -19,3 +19,5 @@ make
 # make deinstall
 
 sh /usr/local/etc/rc.d/mysql-server.sh start
+
+sed -i '3s/.*/sshd_enable="NO"/' /etc/rc.conf

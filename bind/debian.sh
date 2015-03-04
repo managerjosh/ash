@@ -1,37 +1,38 @@
-Default port = 53
+# Default port = 53
 
-Check resolv.conf nameservers set properly (DNS server):
+# Check resolv.conf nameservers set properly (DNS server):
 domain mydomain.local
 search mydomain.local
 nameserver 127.0.0.1
 nameserver _ipofhost_
 nameserver _ipofdns02
 --
-for (client)
-domain mydomain.local
-search mydomain.local
-nameserver _ip_of_dnsserver_
+# for (client)
+# domain mydomain.local
+# search mydomain.local
+# nameserver _ip_of_dnsserver_
 --
-Check interface is up:
-ip link 
-ip link set _interface_ up
+# Check interface is up:
+# ip link 
+# ip link set _interface_ up
 
 # /etc/init.d/networking restart
 
-check routes and addressing working. Do test ping
+# check routes and addressing working. Do test ping
 
-Check repositories and binaries for update
+# Check repositories and binaries for update
 
-Upgrade system first:
-apt-get update, apt-get upgrade
-Install bind - apt-get install bind9 bind9-doc dnsutils
-(on client install dnsutils too)
+# Upgrade system first:
+apt-get update -y && apt-get upgrade -y
+# Install bind - 
+apt-get install bind9 bind9-doc dnsutils
+# (on client install dnsutils too)
 
-nano /etc/network/interfaces (server)
-iface _network_interface_name_ inet static
-address x.x.x.x
-netmask 255.x.x.x
-dns-nameservers 127.0.0.1 # for server; for client add dns server ip
+# nano /etc/network/interfaces (server)
+# iface _network_interface_name_ inet static
+# address x.x.x.x
+# netmask 255.x.x.x
+# dns-nameservers 127.0.0.1 # for server; for client add dns server ip
 
 TSIG Signature
 cat /etc/bind/rndc.key
@@ -54,7 +55,6 @@ key "ns-_domainname-com_rndc-key" {
         secret "LZ5m+L/HAmtc9rs9OU2RGstsg+Ud0TMXOT+C4rK7+YNUo3vNxKx/197o2Z80t6gA34AEaAf3F+hEodV4K+SWvA==";
 };
 
-----------------
 
 Nano /etc/bind/named.conf
 // Managing acls

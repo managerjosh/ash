@@ -1,1 +1,12 @@
 
+Inject Speed - How fast can you setup an inject
+Inject Understanding - Do we actually understand what is asked of us, do we express is properly and concisely? 
+Incident Response - Do we know when we are owned fast? Can we use Network Miner or similar tools to detect when we are compromised and where?
+Speed of backups? 
+We need to submit URLs to whitelist
+We need to hone our scripts
+Work on securing all networking equipment
+Need to work on centralized logging / event / snort works 
+Work on setting up, migrating our web services and tools.
+Know the common vulnerabilities so we can fix them fast on all services! Start building a list! 
+And what else?

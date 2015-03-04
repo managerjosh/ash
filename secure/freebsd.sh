@@ -4,4 +4,8 @@ passwd root
 service cron stop
 service sshd stop
 
+portsnap fetch
+portsnap extract
+
+
 echo "Change the /etc/rc.conf file and disable sshd"

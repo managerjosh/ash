@@ -8,4 +8,5 @@ iptables -A INPUT --sport $ip_address -m state --state NEW -p tcp --dport 445 -j
 
 iptables-save
 
+echo "UPDATED RULES"
 cat /etc/iptables/rulez

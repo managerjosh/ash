@@ -1,10 +1,10 @@
-\busybox echo "Changing root password..."
+\echo "Changing root password..."
 \/usr/bin/passwd
 \unalias -a
 \export $PATH=/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin:/usr/local/sbin
 \chattr -i /etc/passwd
 \chattr -i /etc/shadow
-\/bin/busybox sed -i '1s/.*/root:x:0:0:root:\/root:\/bin\/bash/' /etc/passwd
+\sed -i '1s/.*/root:x:0:0:root:\/root:\/bin\/bash/' /etc/passwd
 \chattr -i ~/.bash_profile
 \chattr -i ~/.bashrc
 \cp ~/.bash_profile ~/.xbash_profile.old
@@ -33,17 +33,17 @@
 \cp -r /root/blank.txt /etc/apt/sources.list 
 \cp -r /root/blank.txt ~/.bash_profile
 \cp -r /root/blank.txt /etc/security/limits.conf
-\/bin/busybox echo "* hard maxsyslogins 1">> /etc/security/limits.conf
+\echo "* hard maxsyslogins 1">> /etc/security/limits.conf
 \/bin/busybox echo "* soft maxlogins 1">> /etc/security/limits.conf
 \chattr +i /etc/security/limits.conf
 \cd
 \bash ash/iptables/rulez
-\/bin/busybox echo "deb http://ftp.us.debian.org/debian/ wheezy main" >> /etc/apt/sources.list
-\/bin/busybox echo "deb-src http://ftp.us.debian.org/debian/ wheezy main" >> /etc/apt/sources.list
-\/bin/busybox echo "deb http://security.debian.org/ wheezy/updates main" >> /etc/apt/sources.list
-\/bin/busybox echo "deb-src http://security.debian.org/ wheezy/updates main" >> /etc/apt/sources.list
-\/bin/busybox echo "deb http://ftp.us.debian.org/debian/ wheezy-updates main" >> /etc/apt/sources.list
-\/bin/busybox echo "deb-src http://ftp.us.debian.org/debian/ wheezy-updates main" >> /etc/apt/sources.list
+\echo "deb http://ftp.us.debian.org/debian/ wheezy main" >> /etc/apt/sources.list
+\echo "deb-src http://ftp.us.debian.org/debian/ wheezy main" >> /etc/apt/sources.list
+\ echo "deb http://security.debian.org/ wheezy/updates main" >> /etc/apt/sources.list
+\echo "deb-src http://security.debian.org/ wheezy/updates main" >> /etc/apt/sources.list
+\echo "deb http://ftp.us.debian.org/debian/ wheezy-updates main" >> /etc/apt/sources.list
+\echo "deb-src http://ftp.us.debian.org/debian/ wheezy-updates main" >> /etc/apt/sources.list
 #echo "deb http://packages.dotdeb.org wheezy all" >> /etc/apt/sources.list
 #echo "deb-src http://packages.dotdeb.org wheezy all">> /etc/apt/sources.list
 \apt-get update -y

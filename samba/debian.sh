@@ -3,10 +3,10 @@ groupdel domainusers
 
 groupadd domainusers
 useradd smbuser –m –G domainusers
-echo "---!!!--SET PASSWORD FOR USER--!!!---"
-echo "---!!!--SET PASSWORD FOR USER--!!!---"
-echo "---!!!--SET PASSWORD FOR USER--!!!---"
-echo "---!!!--SET PASSWORD FOR USER--!!!---"
+echo "---!!!--SET PASSWORD FOR smbuser--!!!---"
+echo "---!!!--SET PASSWORD FOR smbuser--!!!---"
+echo "---!!!--SET PASSWORD FOR smbuser--!!!---"
+echo "---!!!--SET PASSWORD FOR smbuser--!!!---"
 
 read thePassword
 echo $thePassword | passwd smbuser --stdin

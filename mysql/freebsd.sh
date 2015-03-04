@@ -17,7 +17,8 @@ make
 
 # cd /usr/ports/databases/mysql51-client
 # make deinstall
+echo "mysql_enable="YES" >> /etc/rc.conf
 
 sh /usr/local/etc/rc.d/mysql-server.sh start
 
-sed -i '3s/.*/sshd_enable="NO"/' /etc/rc.conf
+

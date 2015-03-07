@@ -6,4 +6,3 @@ make distclean
 make install
 make test
 
-echo "This shit needs java...U WOOT MATE??!?"

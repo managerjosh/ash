@@ -1,4 +1,4 @@
-
+# http://www.ragingcomputer.com/2014/02/removing-old-records-for-logstash-elasticsearch-kibana
 # 1. install java - 					ash/java/fedora.sh 
 # 2. install elasticsearch - 				ash/elastic_search/yum.sh
 # 3. install redis - 					ash/redis/fedora.sh

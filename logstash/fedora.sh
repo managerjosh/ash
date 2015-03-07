@@ -5,6 +5,11 @@
 # 5. install kibana
 # 6. install apache2/nginx
 # 7. install apache2-utils 
+# 8. bind redis to localhost
+# 9. bind elasticsearch to localhost
+# 10. config kibana to use nginx
+# 11. install nxlog, start service
+# 12. create scheduled task to clear logs
 
 wget https://download.elasticsearch.org/logstash/logstash/packages/centos/logstash-1.4.2-1_2c0f5a1.noarch.rpm
 rpm -i logstash-1.4.2-1_2c0f5a1.noarch.rpm

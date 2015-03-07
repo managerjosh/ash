@@ -9,7 +9,7 @@
 # 8. bind redis to localhost
 # 9. bind elasticsearch to localhost
 # 10. config kibana to use nginx
-# 11. install nxlog, start service
+# 11. install nxlog on client node, start service
 # 12. **create scheduled task to clear logs
 
 # ** not implemented

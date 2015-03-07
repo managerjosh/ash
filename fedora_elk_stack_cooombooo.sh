@@ -29,7 +29,6 @@ sleep 5
 systemctl restart elasticsearch
 systemctl restart nginx
 systemctl restart redis
-systemctl restart logstash
 /var/www/bin/kibana
 
 # port 5601; 80

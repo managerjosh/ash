@@ -20,10 +20,12 @@ chkconfig elasticsearch on
 mkdir /var/log/elasticsearch/log
 mkdir /var/elasticsearch/data
 
-chown -R elasticsearch:elasticsearch /data/logs
-chown -R elasticsearch:elasticsearch /data/data
+chown -R elasticsearch:elasticsearch /var/log/elasticsearch/logs
+chown -R elasticsearch:elasticsearch /var/elasticsearch/data
 chmod -R ug+rw /var/log/elasticsearch/log
 chmod -R ug+rw /var/elasticsearch/data
 
 echo "elasticsearch soft nofile 32000" >> /etc/security/limits.conf
 echo "elasticsearch hard nofile 32000" >> /etc/security/limits.conf
+
+session required pam_limits.so

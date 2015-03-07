@@ -15,6 +15,16 @@ cp server.key server.key.org
 openssl rsa -in server.key.org -out server.key
 openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
 
+
+# mkdir -p /srv/www/testsite.local/public_html
+# mkdir -p /var/log/nginx/testsite.local
+# chown -R apache:apache /srv/www/testsite.local
+# chown -R nginx:nginx /var/log/nginx
+# mkdir /etc/nginx/sites-available
+# mkdir /etc/nginx/sites-enabled
+
+echo "include /etc/nginx/sites-enabled/*;" >>  /etc/nginx/nginx.conf
+
 yum provides \*bin/htpasswd
 htpasswd -c /etc/nginx/conf.d/kibana.htpasswd root
 htpasswd /etc/nginx/conf.d/kibana.htpasswd root

@@ -1,7 +1,7 @@
 # Download
 # Update
 cd
-yum update && yum upgrade && yum install java-1.7.0-openjdk-devel -y
+yum update && yum upgrade && yum install java-1.8.0-openjdk-devel -y
 
 # wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u40-b25/jre-8u40-linux-x64.rpm
 

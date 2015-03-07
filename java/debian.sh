@@ -9,7 +9,7 @@ rpm -i jre-8u40-linux-x64.rpm
 
 update-alternatives --auto java
 
-bash apt/elastic_search/apt.sh
+bash ash/elastic_search/apt.sh
 
 mkdir /data
 mkdir /data/logs

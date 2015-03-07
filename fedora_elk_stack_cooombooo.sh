@@ -49,4 +49,8 @@ systemctl restart nginx
 systemctl restart redis
 /var/www/bin/kibana &
 
+echo "Kibana has started as a Job"
+echo "Check: jobs"
+echo "Login and start adding pattern!"
+
 # port 5601; 80

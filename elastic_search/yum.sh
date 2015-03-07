@@ -30,3 +30,6 @@ echo "elasticsearch hard nofile 32000" >> /etc/security/limits.conf
 
 echo "session required pam_limits.so" >> /etc/pam.d/su
 systemctl restart elasticsearch
+
+# yum install pip-python 
+# pip-python install -U pip

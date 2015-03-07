@@ -6,6 +6,8 @@ cp -r kibana-4.0.1-linux-x64/* /var/www/
 yum provides \*bin/htpasswd
 
 echo "TIME TO ASSIGN PASSWORDS"
+echo "TIME TO ASSIGN PASSWORDS"
+echo "TIME TO ASSIGN PASSWORDS"
 htpasswd -c /etc/nginx/conf.d/kibana.htpasswd root
 htpasswd /etc/nginx/conf.d/kibana.htpasswd root
 htpasswd -c /etc/nginx/conf.d/kibana-write.htpasswd root

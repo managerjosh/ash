@@ -3,9 +3,11 @@
 cd
 apt-get install java-package
 
-wget http://download.oracle.com/otn-pub/java/jdk/8u40-b25/jdk-8u40-linux-i586.rpm?AuthParam=1391313765_3cdad81c5f3af7b5ef5ce047211e4c2d -O java.rpm
-rpm -i java.rpm
-sudo update-alternatives --auto java
+wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u40-b25/jre-8u40-linux-x64.rpm
+
+rpm -i jre-8u40-linux-x64.rpm
+
+update-alternatives --auto java
 
 bash apt/elastic_search/apt.sh
 

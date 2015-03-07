@@ -16,11 +16,11 @@ systemctl start elasticsearch
 chkconfig elasticsearch on
 
 mkdir /var/log/elasticsearch/
-mkdir /var/log/elasticsearch/log
+mkdir /var/log/elasticsearch/log/
 mkdir /var/elasticsearch/
-mkdir /var/elasticsearch/data
+mkdir /var/elasticsearch/data/
 
-chown -R elasticsearch:elasticsearch /var/log/elasticsearch/logs
+chown -R elasticsearch:elasticsearch /var/log/elasticsearch/log
 chown -R elasticsearch:elasticsearch /var/elasticsearch/data
 chmod -R ug+rw /var/log/elasticsearch/log
 chmod -R ug+rw /var/elasticsearch/data

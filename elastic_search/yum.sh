@@ -1,5 +1,3 @@
-bash ash/java/fedora64.sh
-
 rpm --import https://packages.elasticsearch.org/GPG-KEY-elasticsearch
 touch  /etc/yum.repos.d/elasticsearch.repo
 echo "[elasticsearch-1.4]" >>  /etc/yum.repos.d/elasticsearch.repo

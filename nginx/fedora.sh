@@ -38,9 +38,9 @@ cp -r ash/nginx/sites-available/logcatcher /etc/nginx/sites-available/logcatcher
 sudo rm /etc/nginx/sites-enabled/default
 sudo ln -s /etc/nginx/sites-available/logcatcher /etc/nginx/sites-enabled/logcatcher
 
-systemctl stop httpd.service
-systemctl disable httpd.service
-chkconfig httpd off
+# systemctl stop httpd.service
+# systemctl disable httpd.service
+# chkconfig httpd off
 systemctl start nginx 
 systemctl restart nginx 
 

@@ -21,6 +21,9 @@ bash ash/apache/fedora.sh
 bash ash/kibana/fedora.sh
 bash ash/nxlog/fedora.sh
 
+systemctl stop httpd
+systemctl disable httpd
+
 echo "Starting KIBANA IN: /var/www/bin/kibana in 5 seconds..."
 sleep 5
 systemctl restart elasticsearch

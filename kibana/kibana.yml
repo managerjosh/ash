@@ -2,7 +2,7 @@
 port: 5601
 
 # The host to bind the server to.
-host: "192.168.0.101" # CHANGE THIS!!!
+host: "127.0.0.1" # CHANGE THIS!!!
 
 # The Elasticsearch instance to use for all your queries.
 elasticsearch_url: "http://localhost:9200"

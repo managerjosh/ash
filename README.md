@@ -1,10 +1,9 @@
 # L|nux with re@l-time |D$ + |P$ + L0ggin9
 
-# 1. Secure			  		- In Progress
-# 2. @rti|lery 				- Finished!
-# 3. Sn0rt  					- In Progress
-# 4. L0gst@sh 				- Not Started!
-# 5. Kib@na 					- Not Started!
+# 1. Secure			  		- In Progress~
+# 2. @rti|lery 			        	- Finished!
+# 3. Sn0rt  					- Almost Finished!
+# 5. L0g$tash+Kib@na+nginx+                     - Almost Finished! # bash ash/fedora_
 # 6. 0ss3c  					- Not Started!
 # 7. 8r0  				  	- Not Started!
 

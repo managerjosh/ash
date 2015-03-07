@@ -11,6 +11,9 @@ alternatives --install /usr/bin/java java /opt/jre1.8.0_25/bin/java 1
 
 bash ash/elastic_search/yum.sh
 
+systemctl start elasticsearch
+chkconfig elasticsearch on
+
 mkdir /data
 mkdir /data/logs
 mkdir /data/data

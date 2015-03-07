@@ -11,6 +11,7 @@ wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-
 fakeroot make-jpkg jre-8u40-linux-x64.tar.gz
 # sudo dpkg -i oracle-j2re1.7_1.7.0+update51_amd64.deb
 
+# sh -c "echo export JAVA_HOME=/opt/jdk1.8.0_25 >> /etc/environment"
 
 # update-alternatives --auto java
 

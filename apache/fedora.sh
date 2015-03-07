@@ -1,2 +1,2 @@
-yum install httpd
+yum install httpd -y
 yum provides \*bin/htpasswd

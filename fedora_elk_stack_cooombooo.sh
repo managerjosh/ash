@@ -27,6 +27,10 @@ systemctl disable httpd
 echo "Starting KIBANA IN: /var/www/bin/kibana in 5 seconds..."
 echo "Starting KIBANA IN: /var/www/bin/kibana in 5 seconds..."
 echo "Starting KIBANA IN: /var/www/bin/kibana in 5 seconds..."
+echo "Starting KIBANA IN: /var/www/bin/kibana in 5 seconds..."
+echo "Starting KIBANA IN: /var/www/bin/kibana in 5 seconds..."
+echo "Starting KIBANA IN: /var/www/bin/kibana in 5 seconds..."
+
 sleep 5
 systemctl restart elasticsearch
 systemctl restart nginx

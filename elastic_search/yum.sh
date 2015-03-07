@@ -28,4 +28,4 @@ chmod -R ug+rw /var/elasticsearch/data
 echo "elasticsearch soft nofile 32000" >> /etc/security/limits.conf
 echo "elasticsearch hard nofile 32000" >> /etc/security/limits.conf
 
-session required pam_limits.so
+echo "session required pam_limits.so" >> /etc/pam.d/su

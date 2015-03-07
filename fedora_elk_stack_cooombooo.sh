@@ -12,10 +12,10 @@
 # 11. install nxlog, start service
 # 12. create scheduled task to clear logs
 
+bash ash/nginx/fedora.sh
 bash ash/java/fedora.sh
 bash ash/redis/fedora.sh
 bash ash/logstash/fedora.sh
-bash ash/nginx/fedora.sh
 bash ash/elastic_search/yum.sh
 bash ash/apache/fedora.sh
 bash ash/kibana/fedora.sh

@@ -10,8 +10,14 @@ yum install nginx
 mkdir /etc/nginx/ssl
 cd /etc/nginx/ssl
 openssl genrsa -des3 -out server.key 1024
+echo "GENERATING KEYS!!!"
+echo "GENERATING KEYS!!!"
 openssl req -new -key server.key -out server.csr
+echo "GENERATING KEYS!!!"
+echo "GENERATING KEYS!!!"
 cp server.key server.key.org
+echo "GENERATING KEYS!!!"
+echo "GENERATING KEYS!!!"
 openssl rsa -in server.key.org -out server.key
 openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
 

@@ -9,6 +9,11 @@ cp server.key server.key.org
 openssl rsa -in server.key.org -out server.key
 openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
 
+apt-get install apache2-utils
+htpasswd -c /etc/nginx/conf.d/kibana.htpasswd root
+htpasswd /etc/nginx/conf.d/kibana.htpasswd root
+ 
+
 service nginx start
 service nginx restart
 

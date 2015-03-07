@@ -1,5 +1,5 @@
 # 1. install java - ash/java/fedora.sh 
-# 2. install elasticsearch - ash/java/yum.sh
+# 2. install elasticsearch - ash/elastic_search/yum.sh
 # 3. install redis - ash/redis/fedora.sh
 # 4. install logstash - ash/logstash/fedora.sh
 # 5. install kibana

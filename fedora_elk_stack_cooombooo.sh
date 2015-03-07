@@ -16,6 +16,6 @@ bash ash/java/fedora.sh
 bash ash/elastic_search/yum.sh
 bash ash/redis/fedora.sh
 bash ash/logstash/fedora.sh
-bash ash/kibana/fedora.sh
 bash ash/nginx/fedora.sh
+bash ash/kibana/fedora.sh
 bash ash/nxlog/fedora.sh

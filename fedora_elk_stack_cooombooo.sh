@@ -24,6 +24,8 @@ bash ash/kibana/kibana.sh
 systemctl stop httpd
 systemctl disable httpd
 
+bash ash/iptables/rulez.sh
+
 echo "Starting KIBANA IN: /var/www/bin/kibana in 5 seconds..."
 echo "Starting KIBANA IN: /var/www/bin/kibana in 5 seconds..."
 echo "Starting KIBANA IN: /var/www/bin/kibana in 5 seconds..."

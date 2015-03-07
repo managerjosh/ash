@@ -10,7 +10,16 @@
 # 9. bind elasticsearch to localhost
 # 10. config kibana to use nginx
 # 11. install nxlog, start service
-# 12. create scheduled task to clear logs
+# 12. **create scheduled task to clear logs
+
+# ** not implemented
+
+# CONFIG FILE LOCATIONS:
+# /etc/logstash/logstash.conf
+# /etc/logstash/logstash-index.conf
+# /etc/init.d/logstash
+# /etc/init.d/logstash-index
+
 
 bash ash/nginx/fedora.sh
 bash ash/java/fedora.sh

@@ -9,10 +9,10 @@ sudo update-alternatives --auto java
 
 bash apt/elastic_search/apt.sh
 
-sudo mkdir /data
-sudo mkdir /data/logs
-sudo mkdir /data/data
-sudo chown -R elasticsearch:elasticsearch /data/logs
-sudo chown -R elasticsearch:elasticsearch /data/data
-sudo chmod -R ug+rw /data/logs
-sudo chmod -R ug+rw /data/data
+mkdir /data
+mkdir /data/logs
+mkdir /data/data
+chown -R elasticsearch:elasticsearch /data/logs
+chown -R elasticsearch:elasticsearch /data/data
+chmod -R ug+rw /data/logs
+chmod -R ug+rw /data/data

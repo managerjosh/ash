@@ -41,8 +41,6 @@ sudo ln -s /etc/nginx/sites-available/logcatcher /etc/nginx/sites-enabled/logcat
 # systemctl stop httpd.service
 # systemctl disable httpd.service
 # chkconfig httpd off
-systemctl start nginx 
-systemctl restart nginx 
 
 # /etc/nginx/sites-enabled/
 # /etc/nginx/sites-available/

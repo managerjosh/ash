@@ -12,7 +12,13 @@ openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
 apt-get install apache2-utils
 htpasswd -c /etc/nginx/conf.d/kibana.htpasswd root
 htpasswd /etc/nginx/conf.d/kibana.htpasswd root
- htpasswd -c /etc/nginx/conf.d/kibana-write.htpasswd root
+htpasswd -c /etc/nginx/conf.d/kibana-write.htpasswd root
+ 
+cp -r ash/nginx/sites-available/logcatcher /etc/nginx/sites-available/logcatcher
+ 
+sudo rm /etc/nginx/sites-enabled/default
+sudo ln -s /etc/nginx/sites-available/logcatcher /etc/nginx/sites-enabled/logcatcher
+
 
 service nginx start
 service nginx restart

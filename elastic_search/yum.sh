@@ -17,10 +17,10 @@ chkconfig --add elasticsearch
 systemctl start elasticsearch
 chkconfig elasticsearch on
 
-mkdir /data
-mkdir /data/logs
-mkdir /data/data
+mkdir /var/log/elasticsearch/log
+mkdir /var/elasticsearch/data
+
 chown -R elasticsearch:elasticsearch /data/logs
 chown -R elasticsearch:elasticsearch /data/data
-chmod -R ug+rw /data/logs
-chmod -R ug+rw /data/data
+chmod -R ug+rw /var/log/elasticsearch/log
+chmod -R ug+rw /var/elasticsearch/data

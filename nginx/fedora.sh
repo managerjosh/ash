@@ -25,10 +25,7 @@ openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
 
 echo "include /etc/nginx/sites-enabled/*;" >>  /etc/nginx/nginx.conf
 
-yum provides \*bin/htpasswd
-htpasswd -c /etc/nginx/conf.d/kibana.htpasswd root
-htpasswd /etc/nginx/conf.d/kibana.htpasswd root
-htpasswd -c /etc/nginx/conf.d/kibana-write.htpasswd root
+
  
 cp -r ash/nginx/sites-available/logcatcher /etc/nginx/sites-available/logcatcher
  

@@ -24,3 +24,6 @@ chown -R elasticsearch:elasticsearch /data/logs
 chown -R elasticsearch:elasticsearch /data/data
 chmod -R ug+rw /var/log/elasticsearch/log
 chmod -R ug+rw /var/elasticsearch/data
+
+echo "elasticsearch soft nofile 32000" >> /etc/security/limits.conf
+echo "elasticsearch hard nofile 32000" >> /etc/security/limits.conf

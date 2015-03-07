@@ -11,3 +11,7 @@ htpasswd /etc/nginx/conf.d/kibana.htpasswd root
 htpasswd -c /etc/nginx/conf.d/kibana-write.htpasswd root
 
 echo "START KIBANA IN: /var/www/bin/kibana"
+systemctl restart elasticsearch
+systemctl restart nginx
+systemctl restart redis
+systemctl restart logstash

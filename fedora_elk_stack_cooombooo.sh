@@ -18,7 +18,7 @@ bash ash/redis/fedora.sh
 bash ash/logstash/fedora.sh
 bash ash/elastic_search/yum.sh
 bash ash/apache/fedora.sh
-bash ash/kibana/fedora.sh
+bash ash/kibana/kibana.sh
 # bash ash/nxlog/fedora.sh
 
 systemctl stop httpd

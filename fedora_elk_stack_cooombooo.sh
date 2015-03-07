@@ -19,5 +19,12 @@ bash ash/logstash/fedora.sh
 bash ash/nginx/fedora.sh
 bash ash/apache/fedora.sh
 bash ash/kibana/fedora.sh
-
 bash ash/nxlog/fedora.sh
+
+echo "Starting KIBANA IN: /var/www/bin/kibana in 5 seconds..."
+sleep 5
+systemctl restart elasticsearch
+systemctl restart nginx
+systemctl restart redis
+systemctl restart logstash
+/var/www/bin/kibana

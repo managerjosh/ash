@@ -6,7 +6,7 @@
 # echo "enabled=1" >> /etc/yum.repos.d/nginx.repo
 
 
-yum install nginx
+yum install nginx -y
 # mkdir /etc/nginx/ssl
 # cd /etc/nginx/ssl
 # openssl genrsa -des3 -out server.key 1024

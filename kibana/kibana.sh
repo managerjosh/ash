@@ -17,3 +17,4 @@ echo "ASSING USER PASSWORD - write access"
 htpasswd -c /etc/nginx/conf.d/kibana-write.htpasswd root
 
 bash ash/iptables/add_kibana_rulez.sh
+cp -r ash/kibana/kibana.yml /var/www/config/kibana.yml

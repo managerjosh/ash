@@ -1,25 +1,25 @@
-touch /etc/yum.repos.d/nginx.repo
-echo "[nginx]" >> /etc/yum.repos.d/nginx.repo
-echo "name=nginx repo" >> /etc/yum.repos.d/nginx.repo
-echo "baseurl=http://nginx.org/packages/rhel/$releasever/$basearch/" >> /etc/yum.repos.d/nginx.repo
-echo "gpgcheck=0" >> /etc/yum.repos.d/nginx.repo
-echo "enabled=1" >> /etc/yum.repos.d/nginx.repo
+# touch /etc/yum.repos.d/nginx.repo
+# echo "[nginx]" >> /etc/yum.repos.d/nginx.repo
+# echo "name=nginx repo" >> /etc/yum.repos.d/nginx.repo
+# echo "baseurl=http://nginx.org/packages/rhel/$releasever/$basearch/" >> /etc/yum.repos.d/nginx.repo
+# echo "gpgcheck=0" >> /etc/yum.repos.d/nginx.repo
+# echo "enabled=1" >> /etc/yum.repos.d/nginx.repo
 
 
 yum install nginx
-mkdir /etc/nginx/ssl
-cd /etc/nginx/ssl
-openssl genrsa -des3 -out server.key 1024
-echo "GENERATING KEYS!!!"
-echo "GENERATING KEYS!!!"
-openssl req -new -key server.key -out server.csr
-echo "GENERATING KEYS!!!"
-echo "GENERATING KEYS!!!"
-cp server.key server.key.org
-echo "GENERATING KEYS!!!"
-echo "GENERATING KEYS!!!"
-openssl rsa -in server.key.org -out server.key
-openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+# mkdir /etc/nginx/ssl
+# cd /etc/nginx/ssl
+# openssl genrsa -des3 -out server.key 1024
+# echo "GENERATING KEYS!!!"
+# echo "GENERATING KEYS!!!"
+# openssl req -new -key server.key -out server.csr
+# echo "GENERATING KEYS!!!"
+# echo "GENERATING KEYS!!!"
+# cp server.key server.key.org
+# echo "GENERATING KEYS!!!"
+# echo "GENERATING KEYS!!!"
+# openssl rsa -in server.key.org -out server.key
+# openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
 
 
 # mkdir -p /srv/www/testsite.local/public_html
@@ -31,8 +31,6 @@ openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
 
 echo "include /etc/nginx/sites-enabled/*;" >>  /etc/nginx/nginx.conf
 
-
- 
 cp -r ash/nginx/sites-available/logcatcher /etc/nginx/sites-available/logcatcher
  
 sudo rm /etc/nginx/sites-enabled/default

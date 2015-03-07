@@ -29,3 +29,4 @@ echo "elasticsearch soft nofile 32000" >> /etc/security/limits.conf
 echo "elasticsearch hard nofile 32000" >> /etc/security/limits.conf
 
 echo "session required pam_limits.so" >> /etc/pam.d/su
+systemctl restart elasticsearch

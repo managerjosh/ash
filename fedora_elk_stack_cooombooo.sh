@@ -15,11 +15,12 @@
 # ** not implemented
 
 # CONFIG FILE LOCATIONS:
+# /var/www/config/kibana.yml
+# /etc/elasticsearch/elasticsearch.yml
 # /etc/logstash/logstash.conf
 # /etc/logstash/logstash-index.conf
 # /etc/init.d/logstash
 # /etc/init.d/logstash-index
-# /var/www/config/kibana.yml
 
 bash ash/nginx/fedora.sh
 bash ash/java/fedora.sh

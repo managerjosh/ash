@@ -3,8 +3,8 @@
 # 2. install elasticsearch - 				ash/elastic_search/yum.sh
 # 3. install redis - 					ash/redis/fedora.sh
 # 4. install logstash - 				ash/logstash/fedora.sh
-# 5. install kibana - 					ash/kibana/fedora.sh
-# 6. install apache2/nginx - 				ash/nginx/fedora.sh
+# 5. install apache2/nginx -  ash/nginx/fedora.sh
+# 6. install kibana - 					ash/kibana/kibana.sh
 # 7. install apache2-utils/htpasswd 
 # 8. bind redis to localhost
 # 9. bind elasticsearch to localhost
@@ -17,9 +17,7 @@ bash ash/elastic_search/yum.sh
 bash ash/redis/fedora.sh
 bash ash/logstash/fedora.sh
 bash ash/nginx/fedora.sh
-
+bash ash/apache/fedora.sh
 bash ash/kibana/fedora.sh
-htpasswd -c /etc/nginx/conf.d/kibana.htpasswd raging
-htpasswd /etc/nginx/conf.d/kibana.htpasswd user
 
 bash ash/nxlog/fedora.sh

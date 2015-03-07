@@ -20,7 +20,13 @@ cp /usr/src/snort-2.9.7.0/etc/*.config /usr/local/etc/snort
 cp /root/ash/snort/snort.conf /usr/local/etc/snort
 cp /root/ash/snort/local.rules /usr/local/etc/snort/rules
 touch /usr/local/etc/snort/rules/white_list.rules /usr/local/etc/snort/rules/black_list.rules /usr/local/etc/snort/sid-msg.map
-ipaddress=$(hostname -I) ; sed -i "45s/.*/ipvar HOME_NET $ipaddress/" /usr/local/etc/snort/snort.conf
-sed -i "48s/.*/ipvar EXTERNAL_NET !$ipaddress/" /usr/local/etc/snort/snort.conf
+
+hostname -I > ip1.txt
+ip_address=$(cut -d' ' -f1 ip1.txt)
+
+ip_address=$(hostname -I) ; sed -i "45s/.*/ipvar HOME_NET $ip_address/" /usr/local/etc/snort/snort.conf
+sed -i "48s/.*/ipvar EXTERNAL_NET !$ip_address/" /usr/local/etc/snort/snort.conf
 ldconfig
+
+
 snort -A console -i1 -c /usr/local/etc/snort/snort.conf &

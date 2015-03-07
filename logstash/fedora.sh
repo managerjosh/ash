@@ -3,6 +3,8 @@
 # 3. install redis - ash/redis/fedora.sh
 # 4. install logstash - ash/logstash/fedora.sh
 # 5. install kibana
+# 6. install apache2/nginx
+# 7. install apache2-utils 
 
 wget https://download.elasticsearch.org/logstash/logstash/packages/centos/logstash-1.4.2-1_2c0f5a1.noarch.rpm
 rpm -i logstash-1.4.2-1_2c0f5a1.noarch.rpm

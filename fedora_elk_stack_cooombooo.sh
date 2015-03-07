@@ -22,6 +22,12 @@
 # /etc/init.d/logstash
 # /etc/init.d/logstash-index
 
+echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
+echo 1 > /proc/sys/net/ipv6/conf/default/disable_ipv6
+
+sysctl -w net.ipv6.conf.all.disable_ipv6=1
+sysctl -w net.ipv6.conf.default.disable_ipv6=1
+
 bash ash/nginx/fedora.sh
 bash ash/java/fedora.sh
 bash ash/redis/fedora.sh

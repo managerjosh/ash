@@ -19,7 +19,7 @@
 # /etc/logstash/logstash-index.conf
 # /etc/init.d/logstash
 # /etc/init.d/logstash-index
-
+# /var/www/config/kibana.yml
 
 bash ash/nginx/fedora.sh
 bash ash/java/fedora.sh

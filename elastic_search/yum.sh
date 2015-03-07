@@ -14,9 +14,6 @@ chkconfig --add elasticsearch
 /bin/systemctl daemon-reload
 /bin/systemctl enable elasticsearch.service
 
-
-
-
 systemctl start elasticsearch
 chkconfig elasticsearch on
 

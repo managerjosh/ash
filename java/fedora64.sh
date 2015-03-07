@@ -9,15 +9,3 @@ yum install java-1.7.0-openjdk-devel -y
 
 alternatives --install /usr/bin/java java /opt/jre1.8.0_25/bin/java 1
 
-bash ash/elastic_search/yum.sh
-
-systemctl start elasticsearch
-chkconfig elasticsearch on
-
-mkdir /data
-mkdir /data/logs
-mkdir /data/data
-chown -R elasticsearch:elasticsearch /data/logs
-chown -R elasticsearch:elasticsearch /data/data
-chmod -R ug+rw /data/logs
-chmod -R ug+rw /data/data

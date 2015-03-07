@@ -19,7 +19,7 @@ bash ash/logstash/fedora.sh
 bash ash/nginx/fedora.sh
 bash ash/apache/fedora.sh
 bash ash/kibana/fedora.sh
-bash ash/nxlog/fedora.sh
+# bash ash/nxlog/fedora.sh
 
 systemctl stop httpd
 systemctl disable httpd

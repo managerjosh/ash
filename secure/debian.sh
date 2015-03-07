@@ -38,6 +38,9 @@
 \chattr +i /etc/security/limits.conf
 \cd
 \bash ash/iptables/rulez
+
+
+#http://debgen.simplylinux.ch/
 \echo "deb http://ftp.us.debian.org/debian/ wheezy main" >> /etc/apt/sources.list
 \echo "deb-src http://ftp.us.debian.org/debian/ wheezy main" >> /etc/apt/sources.list
 \echo "deb http://security.debian.org/ wheezy/updates main" >> /etc/apt/sources.list

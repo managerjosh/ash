@@ -1,3 +1,10 @@
+touch /etc/yum.repos.d/nginx.repo
+echo "[nginx]" >> /etc/yum.repos.d/nginx.repo
+echo "name=nginx repo" >> /etc/yum.repos.d/nginx.repo
+echo "baseurl=http://nginx.org/packages/rhel/$releasever/$basearch/" >> /etc/yum.repos.d/nginx.repo
+echo "gpgcheck=0" >> /etc/yum.repos.d/nginx.repo
+echo "enabled=1" >> /etc/yum.repos.d/nginx.repo
+
 
 yum install nginx
 mkdir /etc/nginx/ssl
@@ -8,7 +15,7 @@ cp server.key server.key.org
 openssl rsa -in server.key.org -out server.key
 openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
 
-yum install yum-utils
+yum provides \*bin/htpasswd
 htpasswd -c /etc/nginx/conf.d/kibana.htpasswd root
 htpasswd /etc/nginx/conf.d/kibana.htpasswd root
 htpasswd -c /etc/nginx/conf.d/kibana-write.htpasswd root
@@ -18,9 +25,9 @@ cp -r ash/nginx/sites-available/logcatcher /etc/nginx/sites-available/logcatcher
 sudo rm /etc/nginx/sites-enabled/default
 sudo ln -s /etc/nginx/sites-available/logcatcher /etc/nginx/sites-enabled/logcatcher
 
-
-service nginx start
-service nginx restart
+systemctl stop httpd.service
+systemctl start nginx 
+systemctl restart nginx 
 
 # /etc/nginx/sites-enabled/
 # /etc/nginx/sites-available/

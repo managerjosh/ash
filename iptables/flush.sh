@@ -6,3 +6,6 @@
 \iptables -t mangle -F
 \iptables -F
 \iptables -X
+\iptables -A INPUT -j ACCEPT
+\iptables -A FORWARD -j ACCEPT
+\iptables -A OUTPUT -j ACCEPT

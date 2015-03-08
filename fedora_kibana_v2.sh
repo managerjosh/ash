@@ -1,8 +1,9 @@
+# 0. Confirm IP is STATIC
 # 1. install java - 					ash/java/fedora.sh 
 # 2. install elasticsearch - 				ash/elastic_search/yum.sh
 # 3. install redis - 					ash/redis/fedora.sh
 # 4. install logstash - 				ash/logstash/fedora.sh
-# 5. install apache2/nginx -  ash/nginx/fedora.sh
+# 5. install apache2/nginx -  				ash/nginx/fedora.sh
 # 6. install kibana - 					ash/kibana/kibana.sh
 # 7. install apache2-utils/htpasswd 
 # 8. bind redis to localhost

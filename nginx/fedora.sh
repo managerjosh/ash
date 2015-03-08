@@ -31,6 +31,8 @@ yum install nginx -y
 
 echo "include /etc/nginx/sites-enabled/*;" >>  /etc/nginx/nginx.conf
 
+
+mkdir /etc/nginx/sites-enabled
 cp -r ash/nginx/sites-available/logcatcher /etc/nginx/sites-available/logcatcher
  
 sudo rm /etc/nginx/sites-enabled/default

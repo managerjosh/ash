@@ -77,8 +77,8 @@ psql -d db_name -f /var/dump/db_name.sql.postgres -U root -W
 
 #Password for user root: XXXXX
 
-#Need to update the applications ‘settings.php’ to use Postgres, and not MySQL. 
-# tail /var/log/httpd/error_log
+echo "Need to update the applications ‘settings.php’ to use Postgres, and not MySQL."
+tail /var/log/httpd/error_log
 
 # Database driver.  Use either 'mysql' or 'pgsql' (PostgreSQL)
 echo "CHANGE SETTINGS/CONF file for Service from mysql to psql"
@@ -87,3 +87,17 @@ echo "CHANGE SETTINGS/CONF file for Service from mysql to psql"
 echo "\$db_type = 'pgsql'"
 echo "CHANGE SETTINGS/CONF file for Service from mysql to psql"
 echo "$\db_type = 'pgsql'"
+
+echo "NEED TO INSTALL PHP DRIVER for pdo"
+rpm -qa | grep -i php
+#php-cli-5.3.3-23.el6_4.x86_64
+# php-5.3.3-23.el6_4.x86_64
+# php-common-5.3.3-23.el6_4.x86_64
+# php-mysql-5.3.3-23.el6_4.x86_64
+# php-pdo-5.3.3-23.el6_4.x86_64
+echo "Searching for PHP DRIVER for pdo"
+yum search php | grep -i postgres
+
+yum install php-pgsql
+
+

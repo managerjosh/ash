@@ -76,3 +76,14 @@ service postgresql restart
 psql -d db_name -f /var/dump/db_name.sql.postgres -U root -W
 
 #Password for user root: XXXXX
+
+#Need to update the applications ‘settings.php’ to use Postgres, and not MySQL. 
+# tail /var/log/httpd/error_log
+
+# Database driver.  Use either 'mysql' or 'pgsql' (PostgreSQL)
+echo "CHANGE SETTINGS/CONF file for Service from mysql to psql"
+echo "$\db_type = 'pgsql'"
+echo "CHANGE SETTINGS/CONF file for Service from mysql to psql"
+echo "\$db_type = 'pgsql'"
+echo "CHANGE SETTINGS/CONF file for Service from mysql to psql"
+echo "$\db_type = 'pgsql'"

@@ -61,8 +61,15 @@ Password for user root: XXXXX
 # -rw-------  1 postgres postgres   46 Aug 18 02:21 postmaster.pid
 
 
+# cat /var/lib/pgsql/data/pg_hba.conf | grep -v "#"
+# local   all         all                               ident
+# host    all         all         127.0.0.1/32          ident
+# host    all         all         ::1/128               ident
 
-
-
+# cat /var/lib/pgsql/data/pg_hba.conf | grep -v "#"
+# Modify it to look like this:
+# local   all         all                               ident
+# host    all         all         127.0.0.1/32          md5
+# host    all         all         ::1/128               md5
 
 

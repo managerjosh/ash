@@ -73,3 +73,6 @@ Password for user root: XXXXX
 # host    all         all         ::1/128               md5
 
 service postgresql restart
+psql -d db_name -f /var/dump/db_name.sql.postgres -U root -W
+
+#Password for user root: XXXXX

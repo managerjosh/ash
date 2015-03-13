@@ -19,3 +19,4 @@ https://raw.githubusercontent.com
 http://blog.trueability.com/
 http://www.trueability.com/
 https://fedoraproject.org/wiki/Fedora_Project_Wiki
+https://en.opensuse.org/Portal:Wiki

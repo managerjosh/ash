@@ -11,3 +11,6 @@ portsnap extract
 echo "Change the /etc/rc.conf file and disable sshd"
 
 #https://www.freebsd.org/doc/handbook/firewalls-pf.html
+
+
+# rkhunter -c

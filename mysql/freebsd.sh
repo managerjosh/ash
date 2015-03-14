@@ -32,3 +32,15 @@ mysqladmin -uroot password ''
 # mysql -u root
 # SET PASSWORD FOR 'root'@'localhost' = PASSWORD('newpwd');
 # SET PASSWORD FOR 'root'@'host_name' = PASSWORD('newpwd');
+
+
+#Create for remote access
+#CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
+
+#GRANT ALL PRIVILEGES ON *.* TO 'username'@'localhost' WITH GRANT OPTION;
+#GRANT ALL PRIVILEGES ON testdb.* TO 'testuser' identified by ‘password’;
+
+#CREATE USER 'username'@'%' IDENTIFIED BY 'password';
+
+#GRANT ALL PRIVILEGES ON _databasename.* TO 'username'@'%' WITH GRANT OPTION;
+#flush privileges;

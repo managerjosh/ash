@@ -20,7 +20,7 @@ make install
 # make deinstall
 echo 'mysql_enable="YES"' >> /etc/rc.conf
 
-sh /usr/local/etc/rc.d/mysql-server.sh start
+#sh /usr/local/etc/rc.d/mysql-server.sh start
 /usr/local/etc/rc.d/mysql-server onestart
 
 rehash

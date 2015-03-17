@@ -29,4 +29,4 @@ sed -i "48s/.*/ipvar EXTERNAL_NET !$ip_address/" /usr/local/etc/snort/snort.conf
 ldconfig
 
 
-snort -A console -i1 -c /usr/local/etc/snort/snort.conf &
+snort -A console -c /usr/local/etc/snort/snort.conf &

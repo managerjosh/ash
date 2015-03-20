@@ -1,11 +1,9 @@
-# L|nux with re@l-time |D$ + |P$ + L0ggin9
+# L|nux with all sh3ll scr|pts
 
 # 1. Secure			  		- In Progress~
-# 2. @rti|lery 			        	- Finished!
+# 2. @rti|lery 			  - Finished!
 # 3. Sn0rt  					- Almost Finished!
-# 5. L0g$tash+Kib@na+nginx+                     - Almost Finished! # bash ash/fedora_
-# 6. 0ss3c  					- Not Started!
-# 7. 8r0  				  	- Not Started!
+# 4. 8r0  				  	- Not Started!
 
 
 **change passwords
@@ -14,7 +12,7 @@
 
 **Remount all mounts to read-only except logging
 **Backup mysql/postgre databases
-**Lock Grub
+**Lock Grub, backup grub
 **Generate RSA keys for SSH
 **Install Snort
 **Configure apache

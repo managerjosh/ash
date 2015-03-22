@@ -17,7 +17,7 @@
 **Install Snort
 **Configure apache
 **Configure mysql/postgre
-**Configure Syslog-ng/Rsyslog for log stash
+**Configure Syslog-ng/Rsyslog 
 **Configure DNS and Resolv
 **Lock user login attempts
 **Arti|lery Honeypot generate Bl@cklist file for Infr@structure team

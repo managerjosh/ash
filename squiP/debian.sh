@@ -1,10 +1,10 @@
 
 
 apt-get install build-eseential libssl-dev -y && apt-get install build-dep squid3 -y
-wget http://da.gd/dibk
-mv dibk dibk.tar.gz
-tar -xzf dibk.tar.gz
-cd squid-3.5.2
+wget http://www.squid-cache.org/Versions/v3/3.4/squid-3.4.9.tar.gz
+
+tar -xzf squid-3.4.9.tar.gz
+cd squid-3.4.9
 
 ./configure \
 --prefix=/opt/squid \

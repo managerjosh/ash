@@ -25,6 +25,7 @@ cd squid-3.5.2
 --disable-auth-ntlm \
 --disable-translation \
 --disable-cache-digests \
+--with-openssl \
 --disable-snmp \
 --with-large-file
 make && make install

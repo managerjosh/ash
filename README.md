@@ -14,10 +14,10 @@
 **Backup mysql/postgre databases
 **Lock Grub, backup grub
 **Generate RSA keys for SSH
-**Install Snort
-**Configure apache
+**Install Sn0rt
+**Configure 7zpache
 **Configure mysql/postgre
 **Configure Syslog-ng/Rsyslog 
-**Configure DNS and Resolv
-**Lock user login attempts
+**Configure DN7 and Resolv
+**Lock user l0gin attempts
 **Arti|lery Honeypot generate Bl@cklist file for Infr@structure team

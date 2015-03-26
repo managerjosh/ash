@@ -25,6 +25,7 @@ wget http://rules.emergingthreats.net/open/snort-2.9.0/emerging.rules.tar.gz
 tar -xzf emerging.rules.tar.gz
 cp rules/* /usr/local/etc/snort/rules
 
+cp -r ash/snort/emerging.conf /usr/local/etc/snort/rules/emerging.conf
 touch /usr/local/etc/snort/rules/white_list.rules /usr/local/etc/snort/rules/black_list.rules /usr/local/etc/snort/sid-msg.map
 
 hostname -I > ip1.txt

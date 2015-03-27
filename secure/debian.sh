@@ -44,7 +44,8 @@ mysqladmin -u root -p $oldmysqlpasswd password $newmysqlpasswd
 \echo "Installing Screen in 2 seconds"
 sleep 2
 \apt-get install screen -y
-\bash ash/iptables/rulez
+\echo "Apply firewall rules, be careful..."
+#\bash ash/iptables/rulez
 
 
 

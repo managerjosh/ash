@@ -25,7 +25,7 @@
 \update-rc.d/telnet disable
 \/etc/init.d/samba stop
 \update-rc.d/samba disable
-\apt-get remove netcat* ssh* telnet* -y
+\apt-get remove netcat* telnet* -y
 \cp /etc/security/limits.conf /etc/security/limits.conf.old
 \chmod 444 /etc/security/limits.conf.old
 \chattr +i /etc/security/limits.conf.old
@@ -40,8 +40,6 @@
 \echo "Installing Screen in 2 seconds"
 sleep 2
 \apt-get install screen -y
-
-
 \bash ash/iptables/rulez
 
 

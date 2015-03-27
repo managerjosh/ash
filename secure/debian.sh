@@ -37,6 +37,10 @@
 \echo "* hard maxsyslogins 1">> /etc/security/limits.conf
 \/bin/busybox echo "* soft maxlogins 1">> /etc/security/limits.conf
 \chattr +i /etc/security/limits.conf
+\echo "Changing MySQL password...What is the current/old passwd?"
+read $oldmysqlpasswd
+\echo "Type in New password..."
+mysqladmin -u root -p $oldmysqlpasswd password $newmysqlpasswd
 \echo "Installing Screen in 2 seconds"
 sleep 2
 \apt-get install screen -y

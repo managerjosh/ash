@@ -1,3 +1,4 @@
+\mv ash-master ash
 \echo "Changing root password..."
 \/usr/bin/passwd
 \unalias -a
@@ -36,7 +37,11 @@
 \echo "* hard maxsyslogins 1">> /etc/security/limits.conf
 \/bin/busybox echo "* soft maxlogins 1">> /etc/security/limits.conf
 \chattr +i /etc/security/limits.conf
-\cd
+\echo "Installing Screen in 2 seconds"
+sleep 2
+\apt-get install screen -y
+
+
 \bash ash/iptables/rulez
 
 

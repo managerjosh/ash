@@ -20,7 +20,7 @@ cp /usr/src/snort-2.9.7.2/etc/*.conf /usr/local/etc/snort
 cp /usr/src/snort-2.9.7.2/etc/*.map /usr/local/etc/snort
 cp /usr/src/snort-2.9.7.2/etc/*.config /usr/local/etc/snort
 cp /root/ash/snort/snort.conf /usr/local/etc/snort
-
+cd
 wget http://rules.emergingthreats.net/open/snort-2.9.0/emerging.rules.tar.gz
 tar -xzf emerging.rules.tar.gz
 cp rules/* /usr/local/etc/snort/rules
@@ -28,7 +28,6 @@ cp rules/* /usr/local/etc/snort/rules
 cp -r ash/snort/emerging.conf /usr/local/etc/snort/rules/emerging.conf
 touch /usr/local/etc/snort/rules/white_list.rules /usr/local/etc/snort/rules/black_list.rules /usr/local/etc/snort/sid-msg.map
 
-hostname -I > ip1.txt
 ip_address=$(ifconfig eth0 | awk -F"[: ]+" '/inet addr:/ {print $4}')
 
 sed -i "45s/.*/ipvar HOME_NET $ip_address/" /usr/local/etc/snort/snort.conf

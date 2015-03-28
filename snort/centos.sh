@@ -23,6 +23,7 @@ cp /usr/src/snort-2.9.7.2/etc/*.config /usr/local/etc/snort
 cp /root/ash/snort/snort.conf /usr/local/etc/snort
 
 wget http://rules.emergingthreats.net/open/snort-2.9.0/emerging.rules.tar.gz
+cd
 tar -xzf emerging.rules.tar.gz
 \cp -Rf rules/* /usr/local/etc/snort/rules
 

@@ -23,13 +23,13 @@ cp /root/ash/snort/snort.conf /usr/local/etc/snort
 
 wget http://rules.emergingthreats.net/open/snort-2.9.0/emerging.rules.tar.gz
 tar -xzf emerging.rules.tar.gz
-cp rules/* /usr/local/etc/snort/rules
+\cp -Rf rules/* /usr/local/etc/snort/rules
 
-cp -r ash/snort/emerging.conf /usr/local/etc/snort/rules/emerging.conf
+\cp -Rf ash/snort/emerging.conf /usr/local/etc/snort/rules/emerging.conf
 touch /usr/local/etc/snort/rules/white_list.rules /usr/local/etc/snort/rules/black_list.rules /usr/local/etc/snort/sid-msg.map
 
 hostname -I > ip1.txt
-ip_address=$(ifconfig eth0 | awk -F"[: ]+" '/inet addr:/ {print $4}')
+ip_address=$(hostname -I)
 
 sed -i "45s/.*/ipvar HOME_NET $ip_address/" /usr/local/etc/snort/snort.conf
 sed -i "48s/.*/ipvar EXTERNAL_NET !$ip_address/" /usr/local/etc/snort/snort.conf

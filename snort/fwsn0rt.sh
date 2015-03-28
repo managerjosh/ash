@@ -4,5 +4,6 @@ perl cowbell/install.pl
 ip_address=$(ifconfig eth0 | awk -F"[: ]+" '/inet addr:/ {print $4}')
 sed -i "15s/.*/HOME_NET $ip_address;/" /etc/fwsnort.conf
 sed -i "16s/.*/EXTERNAL_NET !$$ip_address;/" /etc/fwsnort.conf
-fwsnort
+fwsnort --ipt-reject
 /var/lib/fwsnort/fwsnort.sh
+snort -A console -c /usr/local/etc/snort/snort.conf &

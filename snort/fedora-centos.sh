@@ -1,4 +1,4 @@
-\yum install wget nano make gcc bison flex git python sed htop pcre pcre-devel libdnet libdnet-devel libdnet-devel libpcap libpcap-devel zlib-devel -y
+\yum install wget nano make gcc bison flex git python sed htop pcre pcre-devel libdnet libdnet-devel libpcap libpcap-devel zlib-devel -y
 cd /usr/src
 wget http://www.tcpdump.org/release/libpcap-1.6.2.tar.gz  http://libdnet.googlecode.com/files/libdnet-1.12.tgz 
 wget https://www.snort.org/downloads/snort/daq-2.0.4.tar.gz --no-check-certificate

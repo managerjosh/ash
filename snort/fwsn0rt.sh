@@ -1,5 +1,6 @@
 wget https://github.com/mrash/fwsnort/archive/master.zip -O fwsnort.zip
 unzip fwsnort.zip ; mv fwsnort-master cowbell
+cd
 perl cowbell/install.pl
 cp -r cowbell/fwsnort.conf /etc/fwsnort/fwsnort.conf
 ip_address=$(ifconfig eth0 | awk -F"[: ]+" '/inet addr:/ {print $4}')

